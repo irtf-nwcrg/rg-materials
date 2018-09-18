@@ -1,6 +1,6 @@
 # rg-materials
 
-Repository for the NWCRG meeting materials, both during IETF meetings and NWCRG Interim meetings.
+Repository for the NWCRG meeting materials (agenda, presentations, minutes) used during IETF meetings and Interim meetings.
 Related Internet-drafts are accessible from the [NWCRG datatracker web site](https://datatracker.ietf.org/rg/nwcrg/documents/).
 
 Note that, in addition to this repository:
