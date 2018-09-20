@@ -23,6 +23,7 @@ Simplified BSD License) in Contributions.
 Discussion of this work occurs on the
 [NWCRG research group mailing list](https://mailarchive.ietf.org/arch/browse/nwcrg/)
 ([subscribe](https://www.ietf.org/mailman/listinfo/nwcrg)).  In addition to
-contributions in github, you are encouraged to participate in discussions there.
+contributions in Github, you are encouraged to participate in discussions there.
 
-**Note**: substantive discussion of technical issues MUST occur on the mailing list, not on github.
+We kindly ask contributors to discuss substantive technical issues on the NWCRG mailing
+list rather than on Github forums.

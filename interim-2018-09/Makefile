@@ -6,4 +6,4 @@ HTMLFILE=${BASE}.html
 all:
 	# standalone PDF and HTML output
 	pandoc -s ${MDFILE} -o ${PDFFILE}
-	pandoc -s ${MDFILE} -o ${HTMLFILE}
+	#pandoc -s ${MDFILE} -o ${HTMLFILE}
