@@ -15,6 +15,9 @@ Fully virtual meeting. Josu Bilbao (Ikerlan) will provide Webex support (details
 
 **Estimated duration:** 2h20 (to be updated to reflect the agenda construction)
 
+**notepad: ** https://pad.inria.fr/p/np_p4Z1N6wgRm6rKG2u_interim_nwcrg
+
+
 --------------------------------------------------------------------------------------
 
 *Goal of the Interim: get feedback, discuss freely beyond agenda items, make new ideas emerge.*
