@@ -51,7 +51,7 @@ TODO (chairs): send an email to the list to clarify several aspects (e.g., licen
 
 See slides.
 
-TODO MJM: ask XXX if they can provide channel loss models for 5G.
+TODO MJM: Will ask a local startup if they can provide some channel and IP layer loss models for 5G.
 
 
 ## Facilitating FEC and Network Coding adoption (40')
@@ -60,7 +60,7 @@ TODO MJM: ask XXX if they can provide channel loss models for 5G.
 
 See slides.
 
-MJM: do not focus too much on type of traffic to justify the use of block vs. sliding window codes, but rather on the application needs.
+MJM: do not focus too much on type of traffic to justify the use of block vs. sliding window codes, but rather on the application needs (data, streaming, RT, nRT, delay sensitive, jitter sensitive) and like Kerim said later on the topologies underlaying these applications/services (point to point, peer to peer, mesh etc.).
 
 DO: Say also that there's no simple answer. Do we have enough packets to code over?
 
@@ -68,26 +68,26 @@ DO: It's dangerous to mention Shannon capacity as there are situations where sen
 
 CA: simple hints on coding are useful (e.g., Wikipedia introduction to Reed-Solomon codes is too complex). Otherwise I'm lost with some aspects such as relationships between FEC and congestion control (what are the design issues rather than the solutions?).
 
-MJM: it could be useful to have a table with existing FEC codes with pointers.
+MJM: it could be useful to have a table with existing FEC/NC codes with pointers to esisting drafts and RFCs.
 
-Globally this initiative is recognized as useful. This is not a tutorial on FEC/NC (insist on this) but rather a few ideas for background information.
+Globally this initiative is recognized as useful. This is not a tutorial on FEC/NC (we insist on this) but rather a few ideas for background information.
 
-TODO (chairs): continue on the list.
+TODO (chairs): continue the discussion on the list.
 
 
 ### FEC/NC and Congestion Control (Marie-Jose)
 
 Goal is to explain why FEC/NC can be CC friendly. An I-D that explains why would be appreciated.
 
-We need to find a leader on this topic (MJM does not believe to be the most appropriate person).
-There are connections too with ICCRG.
+We need to find a leader on this topic (MJM does not believe to be the most appropriate person as she is not a CC designer).
+There are connections too with ICCRG: time-based CC, AI-aided CC etc.
 
-TODO (MJM): go to the list for see if someone is interested in leading this work.
+TODO (MJM): go to the list for see if someone is interested in leading this work; in the mean time MJM stays the "editor" but would love to have something to edit.
 
 
 ## Additional topics (10') (Marie-Jose)
 
-AI and VR are good targets for FEC/NC. Those topics should be discussed.
+AI and VR as well as computing are good targets for FEC/NC. Those topics should be discussed.
 
 TODO (MJM): send a message on the list and get ready to have a structured presentation during IETF103.
 
