@@ -50,8 +50,13 @@ What's next?
 
 See [https://datatracker.ietf.org/rg/nwcrg/about/], bottom of page.
 
+#### 08- "In Network Computing Enablers for Extended Reality"
+(Marie-Jose Montpetit) (10+5')
+
+To be presented during COIN meeting tool.
+
 
 ----
-Total allocated time: 95'
+Total allocated time: 110'
 
-Time balance: 25'
+Time balance: 10'
