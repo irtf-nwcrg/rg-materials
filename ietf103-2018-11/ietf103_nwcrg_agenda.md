@@ -1,4 +1,4 @@
-# IETF 103 NWCRG Meeting Agenda, version 0
+# IETF 103 NWCRG Meeting Agenda (v0)
 
 __More information on the research group [datatracker](https://datatracker.ietf.org/rg/nwcrg/) and [Github](https://github.com/irtf-nwcrg/rg-materials/).__
 
@@ -7,9 +7,7 @@ __More information on the research group [datatracker](https://datatracker.ietf.
 
 Saturday and Sunday, November 3-4, 2018, starting at 8:30, Sala Thai Ballroom ([in other timezones](https://www.timeanddate.com/worldclock/fixedtime.html?msg=NWCRG+hackathon&iso=20181103T0830&p1=28&ah=10))
 
-[Hackathon wiki](https://trac.ietf.org/trac/ietf/meeting/wiki/103hackathon)
-
-[Github swifc repo](https://github.com/irtf-nwcrg/swif-codec)
+[Hackathon wiki](https://trac.ietf.org/trac/ietf/meeting/wiki/103hackathon), [Github swifc repo](https://github.com/irtf-nwcrg/swif-codec)
 
 
 ## nwcrg meeting@ietf103
@@ -24,9 +22,9 @@ Monday, November 5, 2018, Morning session I, 9:00-11:00, Boromphimarn 4 ([in oth
 (draft-yang-nwcrg-bats-code-00)
 
 #### 02- Hackathon feedback
-(Vincent Roca) (10')
+(Vincent Roca) (5+5')
 
-The Sliding Window FEC codec project (SWiFC).
+Sliding Window FEC codec project (SWiF Codec).
 Relationships with draft-roca-nwcrg-generic-fec-api-03.
 
 #### 03- "Quick status on Network coding and satellites I-D"
@@ -37,7 +35,7 @@ Relationships with draft-roca-nwcrg-generic-fec-api-03.
 (authors) (5+5')
 (draft-irtf-nwcrg-nwc-ccn-reqs-00)
 
-What's next?
+What's next for both RG-item I-Ds?
 
 #### 05- "FEC and NC for dummies"
 (Vincent Roca) (10+5')
@@ -46,13 +44,13 @@ What's next?
 (Vincent Roca) (10+5')
 
 #### 07- Milestones update
-(Chairs, 10')
+(Chairs, all) (10')
 
 See [https://datatracker.ietf.org/rg/nwcrg/about/], bottom of page.
 
 #### 08- "In Network Computing Enablers for Extended Reality"
 (Marie-Jose Montpetit) (10+5')
-[draft-montpetit-coin-xr-00](https://tools.ietf.org/html/draft-montpetit-coin-xr-00)
+[draft-montpetit-coin-xr-01](https://tools.ietf.org/html/draft-montpetit-coin-xr-01)
 
 To be presented during COIN meeting tool.
 
