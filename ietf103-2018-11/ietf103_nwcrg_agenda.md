@@ -48,6 +48,8 @@ What's next?
 #### 07- Milestones update
 (Chairs, 10')
 
+See [https://datatracker.ietf.org/rg/nwcrg/about/], bottom of page.
+
 
 ----
 Total allocated time: 95'
