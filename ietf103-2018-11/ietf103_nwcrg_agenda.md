@@ -52,6 +52,7 @@ See [https://datatracker.ietf.org/rg/nwcrg/about/], bottom of page.
 
 #### 08- "In Network Computing Enablers for Extended Reality"
 (Marie-Jose Montpetit) (10+5')
+[draft-montpetit-coin-xr-00](https://tools.ietf.org/html/draft-montpetit-coin-xr-00)
 
 To be presented during COIN meeting tool.
 
