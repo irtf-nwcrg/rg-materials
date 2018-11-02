@@ -9,7 +9,7 @@ Note that, in addition to this repository:
 - past meeting material related to NWCRG is easily accessible at [https://datatracker.ietf.org/rg/nwcrg/meetings/].
 
 
-# Eight simple ideas to understand FEC and Network Coding
+# Eight simple ideas to start understanding FEC and Network Coding
 
 ## Idea 1-
 ### "We focus on networks where a packet either arrives or is lost"
