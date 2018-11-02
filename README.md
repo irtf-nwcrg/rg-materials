@@ -45,10 +45,11 @@ Note that, in addition to this repository:
 ### "With NC, network equipments can perform FEC encoding to improve network usage"
 - trivial example where a network equipment could reduce traffic (it sends a single "P1 XOR P2" packet instead of sending both P1 and P2):
 .     
-    Alice          Wi-Fi router          Bob    
-      |    --P1-->      |                 |    
-      |                 |     <--P2--     |    
-      | <--P1 XOR P2--  |  --P1 XOR P2--> |    
+
+>    Alice          Wi-Fi router          Bob    
+>      |    --P1-->      |                 |    
+>      |                 |     <--P2--     |    
+>      | <--P1 XOR P2--  |  --P1 XOR P2--> |    
 
 ## Idea 8-
 ### "One can use FEC and NC in a congestion friendly manner"
