@@ -48,7 +48,9 @@ Note that, in addition to this repository:
 <pre><code>Alice          Wi-Fi router          Bob    
   |    --P1-->      |                 |    
   |                 |     <--P2--     |    
-  | <--P1 XOR P2--  |  --P1 XOR P2--> |    
+  | <--P1 XOR P2--  |  --P1 XOR P2--> |
+  |                 |                 |
+recover P2                     Recover P1
 </code></pre>
 
 ## Idea 8-
