@@ -33,7 +33,7 @@ Note that, in addition to this repository:
 ## Idea 5-
 ### "With large independant data objects, block codes are great, with streams of real-time data that have time correlation, sliding window codes are preferable"
 - ... because splitting the application flow into blocks delays the moment when "repair packets" can be generated!
-- code performance also depends on the type of losses (independant, uniformly spread losses versus correlated, bursty losses) 
+- code performance also depends on the type of losses (independant, uniform losses versus correlated, bursty losses) 
 
 ## Idea 6-
 ### "Some codes are restricted to a single encoder (e.g., sender) and single decoder (e.g., receiver)"
@@ -46,7 +46,7 @@ Note that, in addition to this repository:
 ### "With NC, network equipments can perform FEC encoding to improve network usage"
 - trivial example where a network equipment could reduce traffic (it sends a single "P1 XOR P2" packet instead of sending both P1 and P2):
      
-<pre><code>Alice         Wireless router          Bob    
+<pre><code>Alice        Wireless router          Bob    
   |    --P1-->      |                 |    
   |                 |     <--P2--     |    
   | <--P1 XOR P2--  |  --P1 XOR P2--> |
