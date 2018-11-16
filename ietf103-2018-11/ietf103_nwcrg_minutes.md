@@ -2,6 +2,7 @@
 
 __More information on the research group in the [datatracker](https://datatracker.ietf.org/rg/nwcrg/) and [Github](https://github.com/irtf-nwcrg/rg-materials/).__
 
+First version of minutes taken by Nicolas Kuhn. Great thanks to you!
 
 ## nwcrg@ietf103-hackathon
 
@@ -30,9 +31,11 @@ Smart Lampposts are key infrastructure of smart cities (cameras and sensors).
 There are an estimated 70 millions of lampposts in next to be smart cities. 
 There is a need for connecting these lampposts to the internet. 
 The presentation went over the advantages and drawbacks of different accesses to do so:
+
   - optical fiber: pro (data rate, reliable), cons (price)
   - 4G: pro (easy deployment), cons (low bandwidth during rush hours)
   - multi hop hybrid solution with BATS
+
 BATS coding solution that can deal with hundreds of hops and achieves low latency, high throughput
 and a good compromise between 4G and optical fiber.
 
