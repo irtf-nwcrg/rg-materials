@@ -9,16 +9,16 @@ Note that, in addition to this repository:
 - past meeting material related to NWCRG is easily accessible at [https://datatracker.ietf.org/rg/nwcrg/meetings/].
 
 
-# Eight simple ideas to start understanding FEC and Network Coding
+# Eight simple ideas to start understanding FEC and Network Coding for newcomers
 
 ## Idea 1-
 ### "We focus on networks where a packet either arrives or is lost"
 - we're not at PHY-layer, we are above in the protocol stack and potential bit errors have either been fixed or the packet dropped
 
 ## Idea 2-
-### "Encoding consists in adding redundancy (i.e., repair packets) to the flow"
+### "Encoding consists in adding redundancy (i.e., "repair packets") to the flow"
 
-### "Decoding consists in using redundancy (i.e., repair packets) to recover from packet losses"
+### "Decoding consists in using redundancy (i.e., using "repair packets") to recover from packet losses"
 
 ## Idea 3-
 ### "Math is not an obstacle to understand FEC and NC"
@@ -31,8 +31,9 @@ Note that, in addition to this repository:
 - sliding window: an encoding window slides progressively over the packet flow, the encoder computes a linear combination of packets in this encoding window
 
 ## Idea 5-
-### "Block FEC codes are great for bulk, non real-time traffic, sliding window FEC codes are great for real-time traffic"
-- ... because splitting the application flow into blocks delays the moment when repair packets can be generated!
+### "With large independant data objects, block codes are great, with streams of real-time data that have time correlation, sliding window codes are preferable"
+- ... because splitting the application flow into blocks delays the moment when "repair packets" can be generated!
+- code performance also depends on the type of losses (independant, uniformly spread losses versus correlated, bursty losses) 
 
 ## Idea 6-
 ### "Some codes are restricted to a single encoder (e.g., sender) and single decoder (e.g., receiver)"
@@ -45,7 +46,7 @@ Note that, in addition to this repository:
 ### "With NC, network equipments can perform FEC encoding to improve network usage"
 - trivial example where a network equipment could reduce traffic (it sends a single "P1 XOR P2" packet instead of sending both P1 and P2):
      
-<pre><code>Alice          Wi-Fi router          Bob    
+<pre><code>Alice         Wireless router          Bob    
   |    --P1-->      |                 |    
   |                 |     <--P2--     |    
   | <--P1 XOR P2--  |  --P1 XOR P2--> |
