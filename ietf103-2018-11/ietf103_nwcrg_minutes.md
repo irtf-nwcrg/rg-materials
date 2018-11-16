@@ -62,10 +62,10 @@ A: at the moment now, we just have started looking into this.
 Q (Florin Baboescu - Broadcom): Then how do you link this to 5G since release 16 of 5G is coming up and does not consider such cases.    
 A: Because the application of NC has nothing to do with the physical layer, being implemented at the transport.
 
-Q (Dave Oran - Independant Network Systems Research & Design): About the performance graph. Does that graph include or not hop by hop retransmissions at the lower layers?    
+Q (Dave Oran - Network Systems Research & Design): About the performance graph. Does that graph include or not hop by hop retransmissions at the lower layers?    
 A: no it does not include retransmissions because real-time applications wouldn't be supported.
 
-Q (Dave Oran - Independant Network Systems Research & Design): you should include additional results taking into account low layer retransmissions because the delay wouldn't be that large with such small distances. Also results showing the delay introduced by NC.
+Q (Dave Oran - Network Systems Research & Design): you should include additional results taking into account low layer retransmissions because the delay wouldn't be that large with such small distances. Also results showing the delay introduced by NC.
 You seem to set up a best case comparison for NC: high loss with no hop by hop recovery. 
 Of course it shows major improvements. It would be nice to show how it performs in other situations.
 A: we have done some experiments but they are not shown. 
@@ -97,7 +97,7 @@ __Concerning the draft-roca-nwcrg-generic-fec-api__
 RG adoption ? 
 The API I-D and SWiF codec hackathon project are supposed to evolve in parallel.
 
-Q (Dave Oran - Independant Network Systems Research & Design): No issue in RG adoption, but need to
+Q (Dave Oran - Network Systems Research & Design): No issue in RG adoption, but need to
 have workplan on how to have two different FEC codes.    
 A: we focus on sliding window codes and it should be applicable to any sliding-window-coding scheme.
 	During hackathon, RLC is our first target (especially given the limit manpower during hackathon),
@@ -128,7 +128,7 @@ C (Simon Pietro Romano, remotely): You might want to add a couple of references 
 Q (Vincent Roca): You have started implemented this. That's great. Do not hesitate to join hackathon.
 A: We want to finalize a prototype of our NC for CCN/NDN proposal.
 
-Q (Dave Oran - Independant Network Systems Research & Design - ICNRG hat on): We are about to 
+Q (Dave Oran - Network Systems Research & Design - ICNRG hat on): We are about to 
 release the draft on the CCN protocols. You should look at them to see if there should be changes 
 in the packet format in ICNRG documents.    
 A (Hitoshi Asaeda - NICT): we should not modify any CCN format in these almost done ICNRG documents now.
@@ -137,7 +137,7 @@ Packet extensions or modifications could be done later on and separately.
 
 #### 05- "FEC and NC for dummies" (Vincent Roca, Inria)
 
-Comment: dummies or newcommers?
+Comment: dummies or newcomers?
 
 Q (Rick Taylor - AIRBUS DEFENSE AND SPACE):
 For idea 2, I would agree but think you should just speak about recovered and not repaired packets.
@@ -145,7 +145,7 @@ The word "repair" implies you are fixing broken packets which is not the case he
 A: we try to be consistent with the terminology RFC.
 We will try to find something better that is also inline with the terminology document.
 
-Q (Dave Oran - Independant Network Systems Research & Design): 
+Q (Dave Oran - Network Systems Research & Design): 
 If you have lots of small objects that are independent and you're spraying them out on the network, a sliding window code is actually going to enforce certain types of ordering properties on the data and actually slow things down.
 So we have to find another way to say this I think.
 I suggest:
@@ -162,7 +162,7 @@ may be more robust in front of correlated losses (in bursts).
 Many people have a very bad idea of how codes work with losses.
 All FEC codes are not equivalent in front of various types of losses.
 
-Q (Dave Oran - Independant Network Systems Research & Design) : if the reason you are having bursts of losses is linked
+Q (Dave Oran - Network Systems Research & Design) : if the reason you are having bursts of losses is linked
 to some queue management, NC may not be a solution. 
 
 C (Nicolas Kuhn - CNES): we may be able to provide satellite-based traces to the group. We need to confirm this.
@@ -193,7 +193,7 @@ Q: What are the plans for the NC and ICN draft?
 A (Kazuhisa Matsuzono): We still have to work on specific sections and will be back during the next IETF 104 in Prague.
 We should be ready for WGLC at that moment.
 
-Q (Dave Oran - Independant Network Systems Research & Design) (on the new milesones) There's a possible confusion in the wording with "computing in the network": how can NC help computing in the network and how to use computing in the network to implement NC.
+Q (Dave Oran - Network Systems Research & Design) (on the new milesones) There's a possible confusion in the wording with "computing in the network": how can NC help computing in the network and how to use computing in the network to implement NC.
 A: yes, there are two things.
 
 Q (Hitoshi Asaeda - NICT): NC with ICN as a solution is a new milestones (rather than from the requirements and challenges view point).
