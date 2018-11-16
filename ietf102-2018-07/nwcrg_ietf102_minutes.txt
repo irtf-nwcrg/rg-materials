@@ -1,0 +1,178 @@
+-------------------------------------
+NWCRG @ IETF-102 (Montreal) - Minutes
+-------------------------------------
+Thursday, July 19, 2018
+Morning session I, 9:30-11:30
+Room: Notre Dame
+
+More information: https://datatracker.ietf.org/rg/nwcrg/
+Meetecho recording: https://play.conf.meetecho.com/Playout/?session=IETF102-NWCRG-20180719-0930
+
+
+00- Welcome, administrative and general matters, information for new participants
+    (Chairs) (10')
+
+See Chairs Slides: https://datatracker.ietf.org/meeting/102/materials/slides-102-nwcrg-00-chairs-slides-01
+
+
+PART I: NC building blocks (start: 9:40)
+=========================================
+
+01- "BATS codes" (Raymond W. Yeung, remotely)
+---------------------------------------------
+Slides are in https://datatracker.ietf.org/meeting/102/materials/slides-102-nwcrg-01-yeung-bats-02
+
+ - Q (Dave Oran): what’s the transmission overhead of the code?
+ - A: Matrix code with PRNG LNC with small batch size overhead is very small.
+ - Q (DaveO): what about congestive losses rather than wireless losses?
+ - A: doesn’t matter.
+ - Q (Yunfei Zhang, Tencent): is it easy to install? What is the limit on speed/computation?
+ - A: with weak CPUs, it can be hard. In case of smart streetlights, we had the luxury of using a computer.
+ - A: using a relatively powerful platform to do the network coding computations.
+ - Q: NC around for many years but computational cost is high. Do you see any benefits in cellular or 5G?
+ - A: BATS codes are an efficient implementation of RLNC that should work well.
+ - Marie-Jose: we will have a discussion/draft on implementation issues about RLNC and you're welcome to participate.
+   Also deployments exist so ask to the list, people may give concrete information.
+ - Q (MJM): chair-hat off: have you looked at ICN approaches for multi-hop communications?
+ - A: haven’t looked at it yet.
+ - Q (MJM): chair hat on: do you intend to write a draft?
+ - A: we're thinking about it. Maybe.
+
+
+02- Discussion on FEC Scheme, signaling and protocol (Vincent Roca, all)
+------------------------------------------------------------------------
+Slides are in https://datatracker.ietf.org/meeting/102/materials/slides-102-nwcrg-02-roca-fec-signaling-and-protocol-03
+
+ - Q: (DaveO): signaling is an ambiguous term can cover both metadata in the protocol and separate "out of band" stuff
+ - A: you're right - let’s be clear about this
+
+Question in agenda: what about draft-heide-nwcrg-rlnc?
+------------------------------------------------------
+
+ - A (Kerim Fouli, CodeOn): thanks for comments. We didn't want to make this ID too wide, e.g., no algorithm is specified,
+	we mainly focus on the format that we want to be reusable. The question of scope is important and we'll clarify it.
+ - C (MJM): please use to the list.
+ - Q (Brandon Williams, Akamai): (1) it would be valuable to explore whether a common framing is feasible in this RG.
+	(2) Otherwise, if we look at a separate session establishment protocol, would anybody use it? Ask question and evaluate
+	whether or not people will use it.
+	(3) When we see presentations of individual codes there isn’t commonality in how the benefits and performance are
+	evaluated. I suggest to come up with a common framework for evaluating codes.
+ - A: Yes concerning the evalation framework. It's in scope. Concerning negotiation of parameters it’s actually a very basic
+	approach: it's just a few parameters that are communicated rather than negotiated.
+ - Q (DaveO): be careful about using the term "negotiation" when the signaling may not want it.
+ - A: yes
+
+
+03- "Generic API for Sliding Window FEC Codes" (Vincent Roca)
+-------------------------------------------------------------
+Slides are in https://datatracker.ietf.org/meeting/102/materials/slides-102-nwcrg-03-roca-generic-fec-api-01
+
+ - Q (DaveO): does the API need all this codec description flexibility? Not what the crypto guys did for describing cypher
+	suites. They packaged whole sets of options into single code points and limits them to ensure interoperability.
+ - A: we need flexibility in the API.
+	[Edited: in fact the current codepoint examples comply with DaveO suggestion: a single codepoint packages several
+	techniques of the FEC Scheme, but we could perhaps further restrict the use of some API functions (at least by
+	suggesting what are the functions likely to be used).]
+
+
+04- Feedback from TSVWG draft-ietf-tsvwg-fecframe-ext and draft-ietf-tsvwg-rlc-fec-scheme work (Vincent Roca)
+-------------------------------------------------------------------------------------------------------------
+Slides are in https://datatracker.ietf.org/meeting/102/materials/slides-102-nwcrg-04-roca-rlc-fecframe-lessons-learned-01
+
+Q (MJM): Kerim, what’s your experience on implementation at CodeOn?
+A (Kerim): haven’t looked at it.
+Q (Kerim): it would be good to look at benchmarking, having a common benchmarking framework that does not just focus on speed.
+A: yes, I fully agree.
+
+
+Question in Agenda: what about "Network Coding and Congestion Control" topic?
+-----------------------------------------------------------------------------
+
+ - MJM: this has been pushed out, however this is not going away. Think it’s important. Is anybody ready to contribute?
+ - Emmanuel L.: we tried on the list to get feedback on the subject, but we didn’t get anything.
+ - MJM: let’s try again? I was also planning to propose a draft on "NC issues for implementation/acceptation", maybe this
+	could be tied up together.
+
+
+PART II: Use-cases for NC (start: 10:40)
+========================================
+
+05- "Coding for QUIC" (Ian Swett)
+---------------------------------
+Slides are in https://datatracker.ietf.org/meeting/102/materials/slides-102-nwcrg-05-swett-coding-for-quic-00
+        draft-swett-nwcrg-coding-for-quic / draft-roca-nwcrg-rlc-for-quic
+
+ - Q (DaveO): since streams can be uni-directional or bi-directional, do we need different FEC schemes to reflect it?
+	Beyond complexity, this would enable to capture the full design space.
+ - A (IS+MJM): It's a good point. You made need two schemes because you don't have the same requirements.
+ - Vincent: in FECframe and RMT, we needed an ESI to identify symbols, but with QUIC the stream offset gives you this for free.
+ - Q (Brandon): (slide 12) how similar is this format to FECFRAME?
+ - A (Vincent): It’s fairly similar: ESI is replaced by Offset, the other Key/DT/NSS 32-bit word is similar.
+ - Q (Brandon): how much value is there in applying a single FEC to multiple streams - the silent periods question is entangled
+	with how things work when you have a bunch of individually low-rate streams. Just something to keep in mind.
+
+ - IS: Need to update document to conform to QUIC extension mechanisms. Next step is to code this up and try it out.
+	Maybe an intern at Google?
+ - MJM: will talk to Christian Huitema about working together on this.
+ - DaveO: also interactions with multi path - shouldn’t freeze design in ways that we might regret when multi path is done
+	in QUIC V2.
+
+
+06- "Quick status on Network coding and satellites I-D" (Nicolas Kuhn, remotely)
+--------------------------------------------------------------------------------
+Slides are in https://datatracker.ietf.org/meeting/102/materials/slides-102-nwcrg-06-kuhn-nc-and-satellite-00
+
+ - Vincent: main comment was lack of research challenges in the draft. If you can improve this aspect, it would be useful.
+ - Q: (Stuart  Card, Critical Technologies Inc.) Satellites can have reflection attacks to mount DDoS through Negative Acks, so
+	security is critical. I'd be happy to have discussion with authors.
+- A (MJM): discussion to have on the list as we have ESA specialists for instance.
+
+Question: should draft-kuhn-nwcrg-network-coding-satellites be RG Item?
+ - MJM asks if good idea to adopt for RG in the room?
+ - A (MJM): nobody complains. We continue on the list.
+ - (Nicolas) would love to have security in Satcom covered, but not sure how this interacts with NC.
+ - Vincent: there’s the security considerations mandatory section, but it can also be a research topic.
+ - (Vincent): who agrees in the room to review it if we adopt it as RG Item?
+ - A: three people agree (John + Stuart + Vincent).
+
+
+Question: what about draft draft-matsuzono-nwcrg-nwc-ccn-reqs?
+--------------------------------------------------------------
+
+ - Hitoshi Asaeda: which RG should adopt this NWCRG or ICNRG? In any case it’s important to have a solution.
+	We also need to clarify the requirements so it's good timing to adopt it.
+ - Cedric Westphal: draft has been iterated, probably ready for RG adoption
+ - MJM: we talked to ICN chairs and DaveO is here, one comment is whether there are more people in ICNRG who know about coding
+	than in NWCRG who know about ICN. But it has been done before and we can go that way.
+ - DaveO (as ICNRG co-Chair): could work well either way. But we don't have a solution to have it shared between two RGs.
+	Maybe let Allison (IRTF chair) know and then decide.
+
+
+07- What's next? (chairs, all) (10')
+------------------------------------
+    - Discussions on RG Milestones (see Introduction chair slides)
+    - Do we need an interim mid-September?
+    - Do we plan a hackathon for IETF103  (open-source sliding window FEC codec)?
+
+ - MJM: would like to have an update to Tetris draft and have it RG Item, the same for RLNC.
+ - Kerim: yes, we definitely will do that.
+ - MJM: initial implementation is planned for QUIC, and we already have two documents "how to do it" and "how to do it with a specific code".
+	There could be other FEC Schemes for QUIC.
+ - MJM: we already said we would ask the list for adopting as RG Item the "NC for satellite" and "NC for ICN/CCN" drafts.
+ - MJM: Want to do work on "NC Adoption Challenges".
+ - MJM: We may have an interim (in Boston or in Europe), probably on September 26th. We'll put it on the list to decide.
+ - MJM: We will probably have a Hackathon at IETF103.
+ - Stuart: 99% people using TCP don't know how it works but think the opposite. We need a "network coding for dummies" document.
+	It's really important to have people think they understand how NC works for them to adopt the technology.
+ - MJM: we discussed in the past whether to have a "network coded transport” and decided no. We prefer to have NC and transport
+	be independent.
+ - DaveO: we had horrible experience with parity codes for real-time that broke RTP, so you could either have their stuff running or an RTP
+	implementation running. It has finally been solved by DVB who had more power. But it's unfortunate we had it solved 3 years after
+	the fact.
+ - MJM: start with list discussion about what we think the issues are. It would be interesting to have companies come to the list and
+	say what issues they faced. We all think performance improve but at what cost?
+ - MJM: Do we need an interim mid-September?
+ - A: will ask the list whether and if so where.
+ - MJM: Do we plan a hackathon for IETF103  (open-source sliding window FEC codec)?
+ - A: seems to be good interest in it. Having a decent API draft is a prerequisite, now it's done we can continue.
+
