@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ietf103_nwcrg_minutes</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="ietf-103-nwcrg-meeting-minutes">IETF 103 NWCRG Meeting Minutes</h1>
+<p><strong>More information on the research group in the <a href="https://datatracker.ietf.org/rg/nwcrg/">datatracker</a> and <a href="https://github.com/irtf-nwcrg/rg-materials/">Github</a>.</strong></p>
+<p>First version of minutes taken by Nicolas Kuhn. Great thanks to you!</p>
+<h2 id="nwcrgietf103-hackathon">nwcrg@ietf103-hackathon</h2>
+<p>Saturday and Sunday, November 3-4, 2018.<br />
+<a href="https://trac.ietf.org/trac/ietf/meeting/wiki/103hackathon">Hackathon wiki</a><br />
+<a href="https://github.com/irtf-nwcrg/swif-codec">Github swifc repo</a></p>
+<h2 id="nwcrg-meetingietf103">nwcrg meeting@ietf103</h2>
+<p>Monday, November 5, 2018, Morning session I, 9:00-11:00.<br />
+<a href="https://github.com/irtf-nwcrg/rg-materials/tree/master/ietf103-2018-11">Meeting materials</a><br />
+<a href="https://play.conf.meetecho.com/Playout/?session=IETF103-NWCRG-20181105-0900">Meetecho record</a></p>
+<h4 id="welcome-administrative-and-general-matters-chairs">00- Welcome, administrative and general matters (Chairs)</h4>
+<p>The group moved from <em>just</em> doing codes from actually assessing its deployment in network system. You may want to have a look at the GITHUB repository. Latests versions on the draft can be found there (even if they are not uploaded to the official datatracker).</p>
+<h4 id="bats-coding-scheme-for-multi-hop-data-transport-raymond-w.-yeung-remotely-chinese-univ.-of-honk-kong">01- “BATS Coding Scheme for Multi-hop Data Transport” (Raymond W. Yeung, remotely, Chinese Univ. of Honk Kong)</h4>
+<p>(draft-yang-nwcrg-bats-code-00)</p>
+<p>Smart Lampposts are key infrastructure of smart cities (cameras and sensors). There are an estimated 70 millions of lampposts in next to be smart cities. There is a need for connecting these lampposts to the internet. The presentation went over the advantages and drawbacks of different accesses to do so:</p>
+<ul>
+<li>optical fiber: pro (data rate, reliable), cons (price)</li>
+<li>4G: pro (easy deployment), cons (low bandwidth during rush hours)</li>
+<li>multi hop hybrid solution with BATS</li>
+</ul>
+<p>BATS coding solution that can deal with hundreds of hops and achieves low latency, high throughput and a good compromise between 4G and optical fiber.</p>
+<p>Other applications: wireless ad hoc networks, satellite networks, V2x, underwater, powerline, 5G. Hong Kong Smart Lamppost Project is expected to use BATS code.</p>
+<p>Q (Rick Taylor - AIRBUS DEFENSE AND SPACE): Agree to the use case. The picture shows a single linear topology for the BATS codes, but in real life, you would have intersections and star topologies. How does your solution scale?<br />
+A: You can radiate to more than one lamppost.</p>
+<p>Q (Rick Taylor - AIRBUS DEFENSE AND SPACE) : there is no congestion at that central nodes?<br />
+A: you can always add more than one computer per lamppost.</p>
+<p>Q (Florin Baboescu - Broadcom) : What is the distance between lamppost?<br />
+A: typically less than 50m but the physical layer can adapt to longer distances (e.g., with bigger antennas).</p>
+<p>Q (Florin Baboescu - Broadcom): The capacity depends on the distance. With WiGig’s band (in 60 GHz) that would matter. Have you looked at it? A: We haven’t done that yet but look close at this possibility.</p>
+<p>Q (Florin Baboescu - Broadcom) : did you consider 5G technology (mostly on the backhaul)?<br />
+A: at the moment now, we just have started looking into this.</p>
+<p>Q (Florin Baboescu - Broadcom): Then how do you link this to 5G since release 16 of 5G is coming up and does not consider such cases.<br />
+A: Because the application of NC has nothing to do with the physical layer, being implemented at the transport.</p>
+<p>Q (Dave Oran - Network Systems Research &amp; Design): About the performance graph. Does that graph include or not hop by hop retransmissions at the lower layers?<br />
+A: no it does not include retransmissions because real-time applications wouldn’t be supported.</p>
+<p>Q (Dave Oran - Network Systems Research &amp; Design): you should include additional results taking into account low layer retransmissions because the delay wouldn’t be that large with such small distances. Also results showing the delay introduced by NC. You seem to set up a best case comparison for NC: high loss with no hop by hop recovery. Of course it shows major improvements. It would be nice to show how it performs in other situations. A: we have done some experiments but they are not shown.</p>
+<p>Q (Vincent Roca - INRIA): You have always been clear about IPR disclosure. I assume this I-D should be subject to an IPR-disclosure too.<br />
+A: We’ll do so, we didn’t forgot.</p>
+<h4 id="hackathon-feedback-and-generic-sliding-window-fec-api-vincent-roca-inria">02- Hackathon feedback and Generic Sliding Window FEC API (Vincent Roca, Inria)</h4>
+<p>Sliding Window FEC codec project (SWiF Codec). Objective of the hackathon:</p>
+<ul>
+<li>Design a reference and open-source, free SWiF codec (or set of codecs);</li>
+<li>Challenge our generic API I-D;</li>
+<li>(also) Test the FEC/NC for dummies document</li>
+</ul>
+<p>Achievements:</p>
+<ul>
+<li>several fixes in the generic FEC API document</li>
+<li>laid out github repository</li>
+<li>major progress on the encoder</li>
+</ul>
+<p>However we are missing manpower. Please show up for next IETF.</p>
+<p><strong>Concerning the draft-roca-nwcrg-generic-fec-api</strong></p>
+<p>RG adoption ? The API I-D and SWiF codec hackathon project are supposed to evolve in parallel.</p>
+<p>Q (Dave Oran - Network Systems Research &amp; Design): No issue in RG adoption, but need to have workplan on how to have two different FEC codes.<br />
+A: we focus on sliding window codes and it should be applicable to any sliding-window-coding scheme. During hackathon, RLC is our first target (especially given the limit manpower during hackathon), but (a certain variant of) RLNC is expected too.</p>
+<p>Q (Rick Taylor - AIRBUS DEFENSE AND SPACE) : I agree with the aforementioned position. We may want to have two very different FEC codecs to challenge the generic API.</p>
+<p>A: we will go to the list to ask formal RG adoption.</p>
+<h4 id="quick-status-on-network-coding-and-satellites-i-d-nicolas-kuhn-cnes">03- “Quick status on Network coding and satellites I-D” (Nicolas Kuhn, CNES)</h4>
+<p>(draft-irtf-nwcrg-network-coding-satellites-00)</p>
+<p>C (Vincent Roca): We may be close to the end for this document. Everbody is welcome to read.</p>
+<p>Q/C (Rick Taylor - AIRBUS DEFENSE AND SPACE): Great DTN section. The DTN section should have references updated to IETF. DTN meeting on Thursday could bring some volunteers.<br />
+A (Nicolas K.): will update the section and go to the DTN meeting.</p>
+<p>C (Simon Pietro Romano, remotely): You might want to add a couple of references to ongoing ESA projects, like SHINE (NC to improve security of satellite-based CDNs).</p>
+<h4 id="quick-status-on-network-coding-for-content-centric-networking-named-data-networking-requirements-and-challenges-kazuhisa-matsuzono-nict">04- “Quick status on Network Coding for Content-Centric Networking / Named Data Networking: Requirements and Challenges” (Kazuhisa Matsuzono, NICT)</h4>
+<p>(draft-irtf-nwcrg-nwc-ccn-reqs-00)</p>
+<p>Q (Vincent Roca): You have started implemented this. That’s great. Do not hesitate to join hackathon. A: We want to finalize a prototype of our NC for CCN/NDN proposal.</p>
+<p>Q (Dave Oran - Network Systems Research &amp; Design - ICNRG hat on): We are about to release the draft on the CCN protocols. You should look at them to see if there should be changes in the packet format in ICNRG documents.<br />
+A (Hitoshi Asaeda - NICT): we should not modify any CCN format in these almost done ICNRG documents now. Packet extensions or modifications could be done later on and separately.</p>
+<h4 id="fec-and-nc-for-dummies-vincent-roca-inria">05- “FEC and NC for dummies” (Vincent Roca, Inria)</h4>
+<p>Comment: dummies or newcomers?</p>
+<p>Q (Rick Taylor - AIRBUS DEFENSE AND SPACE): For idea 2, I would agree but think you should just speak about recovered and not repaired packets. The word “repair” implies you are fixing broken packets which is not the case here. A: we try to be consistent with the terminology RFC. We will try to find something better that is also inline with the terminology document.</p>
+<p>Q (Dave Oran - Network Systems Research &amp; Design): If you have lots of small objects that are independent and you’re spraying them out on the network, a sliding window code is actually going to enforce certain types of ordering properties on the data and actually slow things down. So we have to find another way to say this I think. I suggest: “If you have large data objects, you should go for block coding,” “If you have streams of real-time data with time correlation, you should use sliding window.”<br />
+A: we agree that we need to add things about the size and the timing.</p>
+<p>Q (Rick Taylor - AIRBUS DEFENSE AND SPACE): idea 7 does not show network improved networks. The improvement is not clear. The Wi-Fi use case may not be a good one (WiFi multicast is particularly inefficient).</p>
+<p>Q (Marie-Jose Montpetit - without chair hat): you should provide information of the losses patterns. Codes would have different performances in different cases. There are codes that are better with random losses while others may be more robust in front of correlated losses (in bursts). Many people have a very bad idea of how codes work with losses. All FEC codes are not equivalent in front of various types of losses.</p>
+<p>Q (Dave Oran - Network Systems Research &amp; Design) : if the reason you are having bursts of losses is linked to some queue management, NC may not be a solution.</p>
+<p>C (Nicolas Kuhn - CNES): we may be able to provide satellite-based traces to the group. We need to confirm this.</p>
+<h4 id="fec-and-nc-performance-evaluation-vincent-roca-inria">06- “FEC and NC performance evaluation” (Vincent Roca, Inria)</h4>
+<p>Q (Marie-Jose Montpetit - without chair hat): in the performance metrics slide (topic 2), you should mention residual losses. A: Yes, this is what is meant here, with real-time flow, we assess the required code rate to achieve a certain quality objective in terms of residual losses that can be tolerated with a given channel.</p>
+<p>Q (Marie-Jose Montpetit - without chair hat): is it a loss profiles, i.e., measured, or loss model, i.e., generated using a theoretical model? I think we need both. A: yes, in this case (3GPP SA4 mobility), they are loss models, generated by taking account of the physical layer protection and propagation models.</p>
+<p>Q (Nicolas Kuhn - CNES) : we should be aware on the OSI layer we are working at - otherwise this could lead to misleading conclusions. I’ll try to be clear when we’ll provide satellite traces on how it was provided.</p>
+<p>Q (Marie-Jose Montpetit - without chair hat): in ns-3 and ns-2 simulations, there is no good code simulators. We may want to go for a ns-2/ns-3 hackhaton for having codes and provide an organised ns2/3 repository of simulators. I suggest you add this to your slides.</p>
+<h4 id="milestones-update-chairs-all">07- Milestones update (Chairs, all)</h4>
+<p>See [https://datatracker.ietf.org/rg/nwcrg/about/], bottom of page.</p>
+<p>Milestones need to be udpated. Let’s start discussing this here, we’ll finish on the list.</p>
+<p>Q: What are the plans for the NC and ICN draft?<br />
+A (Kazuhisa Matsuzono): We still have to work on specific sections and will be back during the next IETF 104 in Prague. We should be ready for WGLC at that moment.</p>
+<p>Q (Dave Oran - Network Systems Research &amp; Design) (on the new milesones) There’s a possible confusion in the wording with “computing in the network”: how can NC help computing in the network and how to use computing in the network to implement NC. A: yes, there are two things.</p>
+<p>Q (Hitoshi Asaeda - NICT): NC with ICN as a solution is a new milestones (rather than from the requirements and challenges view point). How can we express NC functions in an ICN wording? In this contexte collaborations with ICNRG could be envisioned.</p>
+<h4 id="in-network-computing-enablers-for-extended-reality-marie-jose-montpetit">08- “In Network Computing Enablers for Extended Reality” (Marie-Jose Montpetit)</h4>
+<p><a href="https://tools.ietf.org/html/draft-montpetit-coin-xr-01">draft-montpetit-coin-xr-01</a></p>
+<p>Join the COIN side meeting on Friday morning.</p>
+</body>
+</html>
