@@ -6,7 +6,7 @@
 
 ## 1- nwcrg@ietf104-hackathon
 
-Saturday and Sunday, March 3-4, 2018, starting at 8:30, Grand Ballroom
+Saturday and Sunday, March 3-4, 2018, starting at 9:00, Grand Ballroom
 
 * [Hackathon wiki](https://trac.ietf.org/trac/ietf/meeting/wiki/104hackathon)    
 * [Github swif-codec repo](https://github.com/irtf-nwcrg/swif-codec)    
