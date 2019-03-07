@@ -8,11 +8,12 @@ Saturday and Sunday, March 3-4, 2018, starting at 9:00, Grand Ballroom
 
 ## Expected participants
 
-* Vincent
-* Marie-Jose (Saturday)
-* François
-* Kazuhisha ???
-* Cedric ???
+* Vincent Roca
+* Marie-Jose Mbntpetit (Saturday)
+* François Michel
+* Kazuhisha Matsuzono
+* Cedric Adjih
+* Oumaima Attia
 * ???
 
 ## General topics to be discussed and agreed on
