@@ -28,14 +28,9 @@ To be discussed:
 * Add a Python wrapper to the SWIF Codec, then Python test and simulation applications.
 
 ### Strategy
-1- Work on encoder first, with an operational SWIF encoder + server application.    
-	Add unitary tests for the encoder.
-2- Work on decoder and test the whole chain: server - client.    
-	Add unitary tests for the decoder and the whole chain.
-
-In parallel, work on Python wrapper and python applications.
-
-
+* Work on encoder first, with an operational SWIF encoder + server application. Add unitary tests for the encoder.
+* Then work on decoder and test the whole chain: server - client. Add unitary tests for the decoder and the whole chain.
+* In parallel, work on Python wrapper and python applications.
 
 
 ## Tasks
