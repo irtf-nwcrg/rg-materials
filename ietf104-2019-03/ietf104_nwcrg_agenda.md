@@ -45,8 +45,11 @@ TO BE CONFIRMED
 #### 06- "Coding for low latency" 
 (Morten V. Pedersen) (10+5)
 
+#### 07- "About RLC/TinyMT32 standardisation at TSVWG: a quick feedback"
+(Vincent Roca) (5+5)
+
 
 --    
-Total allocated time: 85'
+Total allocated time: 95'
 
-Time balance: 35'
+Time balance: 25'
