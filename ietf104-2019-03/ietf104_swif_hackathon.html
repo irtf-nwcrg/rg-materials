@@ -42,10 +42,11 @@
 <h3 id="swif-codec-project-targets">SWIF Codec project targets:</h3>
 <p>To be discussed: * Focus on an RLC codec first (as per <a href="https://datatracker.ietf.org/doc/draft-ietf-tsvwg-rlc-fec-scheme/">RLC I-D</a>), the RLNC codec will be addressed as a second step (it will share a lot of code anyway. * Design the SWIF Codec + tiny C language server (encoding side)/client (decoding side) application. * Add a Python wrapper to the SWIF Codec, then Python test and simulation applications.</p>
 <h3 id="strategy">Strategy</h3>
-<p>1- Work on encoder first, with an operational SWIF encoder + server application.<br />
-Add unitary tests for the encoder. 2- Work on decoder and test the whole chain: server - client.<br />
-Add unitary tests for the decoder and the whole chain.</p>
-<p>In parallel, work on Python wrapper and python applications.</p>
+<ul>
+<li>Work on encoder first, with an operational SWIF encoder + server application. Add unitary tests for the encoder.</li>
+<li>Then work on decoder and test the whole chain: server - client. Add unitary tests for the decoder and the whole chain.</li>
+<li>In parallel, work on Python wrapper and python applications.</li>
+</ul>
 <h2 id="tasks">Tasks</h2>
 <h3 id="swif-codec-encoder">SWIF Codec, encoder:</h3>
 <ul>
