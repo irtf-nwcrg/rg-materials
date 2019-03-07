@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ietf104_swif_hackathon</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="ietf-104-swif-codec-hackathon">IETF 104 SWIF Codec Hackathon</h1>
+<p>Saturday and Sunday, March 3-4, 2018, starting at 8:30, Grand Ballroom</p>
+<ul>
+<li><a href="https://trac.ietf.org/trac/ietf/meeting/wiki/104hackathon">Hackathon wiki</a><br />
+</li>
+<li><a href="https://github.com/irtf-nwcrg/swif-codec">Github swif-codec repo</a></li>
+</ul>
+<h2 id="expected-participants">Expected participants</h2>
+<ul>
+<li>Vincent</li>
+<li>Marie-Jose (Saturday)</li>
+<li>François</li>
+<li>Kazuhisha ???</li>
+<li>Cedric ???</li>
+<li>???</li>
+</ul>
+<h2 id="general-topics-to-be-discussed-and-agreed-on">General topics to be discussed and agreed on</h2>
+<h3 id="licencing-considerations">Licencing considerations:</h3>
+<ul>
+<li>Do all contributors agree to use a BSD licence?</li>
+<li>Do all the authors of existing code reused by the SWIF codec (Cedric/Vincent/…) agree to switch to a BSD licence?</li>
+</ul>
+<h3 id="swif-codec-project-targets">SWIF Codec project targets:</h3>
+<p>To be discussed: * Focus on an RLC codec first (as per <a href="https://datatracker.ietf.org/doc/draft-ietf-tsvwg-rlc-fec-scheme/">RLC I-D</a>), the RLNC codec will be addressed as a second step (it will share a lot of code anyway. * Design the SWIF Codec + tiny C language server (encoding side)/client (decoding side) application. * Add a Python wrapper to the SWIF Codec, then Python test and simulation applications.</p>
+<h3 id="strategy">Strategy</h3>
+<p>1- Work on encoder first, with an operational SWIF encoder + server application.<br />
+Add unitary tests for the encoder. 2- Work on decoder and test the whole chain: server - client.<br />
+Add unitary tests for the decoder and the whole chain.</p>
+<p>In parallel, work on Python wrapper and python applications.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="swif-codec-encoder">SWIF Codec, encoder:</h3>
+<ul>
+<li>T1.01: glue between the generic API and RLC codec: the generic API is the one shared by all the SWIF codecs, an RLC flavor is needed as well as a link between the two ones.</li>
+<li>T1.02: work on GF(2^8) math library: reuse gardinet lib, understand how to use it, see if something is missing.</li>
+<li>T1.03: work on encoder_create()</li>
+<li>T1.04: work on encoder_release()</li>
+<li>T1.05: work on encoder_set_callback_functions()</li>
+<li>T1.06: work on swif_encoder_set/get_parameters()</li>
+<li>T1.07: work on swif_build_repair_symbol(): requires to generate the coding coefficients (see RLC I-D) and to computate of the linear combination.</li>
+<li>T1.08: work on encoder_reset_coding_window()</li>
+<li>T1.09: work on encoder_add_source_symbol_to_coding_window()</li>
+<li>T1.10: work on encoder_remove_source_symbol_from_coding_window()</li>
+<li>T1.11: work on encoder_get_coding_window_information()</li>
+<li>T1.12: work on encoder_set_coding_coefs_tab()</li>
+<li>T1.13: work on swif_encoder_generate_coding_coefs()</li>
+<li>T1.14: work on encoder_get_coding_coefs_tab()</li>
+</ul>
+<h3 id="swif-codec-decoder">SWIF Codec, decoder:</h3>
+<ul>
+<li>T2.01: work on new source or repair symbol reception</li>
+<li>T2.02: linear system decoding using the GF(2^8) math library: includes linear system representation (C structure), progressive decoding upon receiving repair symbols involving erased source symbol(s)</li>
+<li>T2.03: work on decoder_create()</li>
+<li>T2.04: work on decoder_release()</li>
+<li>T2.05: work on set_callback_functions()</li>
+<li>T2.06: work on decoder_set/get_parameters</li>
+<li>T2.07: work on decoder_decode_with_new_source_symbol(): relies on work done on task “linear system decoding”</li>
+<li>T2.08: work on decoder_decode_with_new_repair_symbol(): relies on work done on task “linear system decoding”</li>
+<li>T2.09: work on decoder_reset_coding_window()</li>
+<li>T2.10: work on decoder_add_source_symbol_to_coding_window()</li>
+<li>T2.11: work on decoder_remove_source_symbol_from_coding_window()</li>
+<li>T2.12: work on decoder_set_coding_coefs_tab()</li>
+<li>T2.13: work on decoder_generate_coding_coefs()</li>
+</ul>
+<h3 id="swif-codec-unitary-test">SWIF Codec unitary test:</h3>
+<ul>
+<li>T3.1: find a way to add unitary tests.</li>
+<li>T3.2: add as many unitary tests as possible for the encoder.</li>
+<li>T3.3: add as many unitary tests as possible for the decoder.</li>
+<li>T3.4: add as many unitary tests as possible for the server/client transmission.</li>
+</ul>
+<h3 id="c-language-serverclient-application">C-language server/client application:</h3>
+<ul>
+<li>T4.1: work on server (i.e., the encoding/sending side): requires to design a trivial packet format (transmission of the FEC OTI can be static on the opposite), set up the UDP connection, design a simple rate control scheme (to avoid saturating the receiver), and use the generic API to create repair symbols. This work should enable to provide feedback on the Generic API I-D.</li>
+<li>T4.2: work on client (i.e., the decoding/receiving side): set up the UDP connection, use the generic API to manage source/repair symbols, to recover from erased source symbols. Test the whole transmission/reception chain. This work should enable to provide feedback on the Generic API I-D.</li>
+</ul>
+<h3 id="python-wrapper">Python wrapper:</h3>
+<ul>
+<li>T5.X:</li>
+</ul>
+<h3 id="python-test-and-simulation-applications">Python test and simulation applications:</h3>
+<ul>
+<li>T6.X:</li>
+</ul>
+</body>
+</html>
