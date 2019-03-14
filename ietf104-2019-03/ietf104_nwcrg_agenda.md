@@ -26,7 +26,7 @@ Sliding Window FEC codec project (SWiF Codec).
 Relationships with draft-roca-nwcrg-generic-fec-api.
 
 #### 02- "Quick status on Network coding and satellites I-D"
-(Nicolas Kuhn, remote) (5+5')    
+(Nicolas Kuhn) (5+5')    
 (draft-irtf-nwcrg-network-coding-satellites)
 
 #### 03- "Quick status on Network Coding for Content-Centric Networking / Named Data Networking: Requirements and Challenges"
@@ -34,7 +34,7 @@ Relationships with draft-roca-nwcrg-generic-fec-api.
 (draft-irtf-nwcrg-nwc-ccn-reqs)    
 
 #### 04- "RLNC Background and Practical Considerations / RLNC Based Symbol Representation"
-(Kerim Fouli) (10+5)    
+(Kerim Fouli and Muriel Medard, remote) (10+5)    
 [draft-heide-nwcrg-rlnc-background and draft-heide-nwcrg-rlnc]
 
 #### 05- "Adding Forward Erasure Correction to QUIC"

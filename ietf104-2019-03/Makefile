@@ -18,6 +18,8 @@ HTMLFILE=${BASE}.html
 HTMLFILE1=${BASE1}.html
 HTMLFILE2=${BASE2}.html
 
+all: txt html
+
 txt:
 	pandoc -s ${MDFILE} -o ${TXTFILE}
 	pandoc -s ${MDFILE1} -o ${TXTFILE1}
