@@ -88,5 +88,5 @@ To be discussed:
 * the esi_t is probably inappropriate. In certain situations, it may be a 64-bit long identifer, in other situations it may be an offet (e.g., see RLC for QUIC).
 * clarification for buffer init/free in function swif_build_repair_symbol().
 * clarification (added examples) for the definition of codepoints
-
+* typo (encoder instead of decoder) in swif_decoder_reset_coding_window (swif_decoder_t *dec);
 
