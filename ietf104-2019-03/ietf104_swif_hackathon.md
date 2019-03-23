@@ -87,5 +87,6 @@ To be discussed:
 * do we really need the encoder_reset_coding_window()? This is clearly useful at the decoder (specify a brand new coding window), but we expect most encoders to manage their encoding window continuously, without needing to reset it altogether. A decision needs to be taken: keep it or remove it.
 * the esi_t is probably inappropriate. In certain situations, it may be a 64-bit long identifer, in other situations it may be an offet (e.g., see RLC for QUIC).
 * clarification for buffer init/free in function swif_build_repair_symbol().
+* clarification (added examples) for the definition of codepoints
 
 
