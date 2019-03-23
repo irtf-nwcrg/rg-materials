@@ -24,16 +24,6 @@
 </li>
 <li><a href="https://github.com/irtf-nwcrg/swif-codec">Github swif-codec repo</a></li>
 </ul>
-<h2 id="expected-participants">Expected participants</h2>
-<ul>
-<li>Vincent Roca</li>
-<li>Marie-Jose Mbntpetit (Saturday)</li>
-<li>François Michel</li>
-<li>Kazuhisha Matsuzono</li>
-<li>Cedric Adjih</li>
-<li>Oumaima Attia</li>
-<li>???</li>
-</ul>
 <h2 id="general-topics-to-be-discussed-and-agreed-on">General topics to be discussed and agreed on</h2>
 <h3 id="licencing-considerations">Licencing considerations:</h3>
 <ul>
@@ -48,16 +38,24 @@
 <li>Then work on decoder and test the whole chain: server - client. Add unitary tests for the decoder and the whole chain.</li>
 <li>In parallel, work on Python wrapper and python applications.</li>
 </ul>
+<h2 id="expected-participants">Expected participants</h2>
+<ul>
+<li>(VR) Vincent Roca</li>
+<li>(MJM) Marie-Jose Mbntpetit (Saturday)</li>
+<li>(FM) François Michel</li>
+<li>(CA) Cedric Adjih</li>
+<li>(OA) Oumaima Attia</li>
+</ul>
 <h2 id="tasks">Tasks</h2>
 <h3 id="swif-codec-encoder">SWIF Codec, encoder:</h3>
 <ul>
-<li>T1.01: glue between the generic API and RLC codec: the generic API is the one shared by all the SWIF codecs, an RLC flavor is needed as well as a link between the two ones.</li>
-<li>T1.02: work on GF(2^8) math library: reuse gardinet lib, understand how to use it, see if something is missing.</li>
-<li>T1.03: work on encoder_create()</li>
-<li>T1.04: work on encoder_release()</li>
+<li>T1.01: glue between the generic API and RLC codec</li>
+<li>T1.02: (CA) work on GF(2^8) math library: reuse gardinet lib, understand how to use it, see if something is missing.</li>
+<li>T1.03: (OA) work on encoder_create()</li>
+<li>T1.04: (OA) work on encoder_release()</li>
 <li>T1.05: work on encoder_set_callback_functions()</li>
 <li>T1.06: work on swif_encoder_set/get_parameters()</li>
-<li>T1.07: work on swif_build_repair_symbol(): requires to generate the coding coefficients (see RLC I-D) and to computate of the linear combination.</li>
+<li>T1.07: (CA) work on swif_build_repair_symbol(): requires to generate the coding coefficients (see RLC I-D) and to computate of the linear combination.</li>
 <li>T1.08: work on encoder_reset_coding_window()</li>
 <li>T1.09: work on encoder_add_source_symbol_to_coding_window()</li>
 <li>T1.10: work on encoder_remove_source_symbol_from_coding_window()</li>
@@ -91,16 +89,23 @@
 </ul>
 <h3 id="c-language-serverclient-application">C-language server/client application:</h3>
 <ul>
-<li>T4.1: work on server (i.e., the encoding/sending side): requires to design a trivial packet format (transmission of the FEC OTI can be static on the opposite), set up the UDP connection, design a simple rate control scheme (to avoid saturating the receiver), and use the generic API to create repair symbols. This work should enable to provide feedback on the Generic API I-D.</li>
+<li>T4.1 (VR) : work on server (i.e., the encoding/sending side): requires to design a trivial packet format (transmission of the FEC OTI can be static on the opposite), set up the UDP connection, design a simple rate control scheme (to avoid saturating the receiver), and use the generic API to create repair symbols. This work should enable to provide feedback on the Generic API I-D.</li>
 <li>T4.2: work on client (i.e., the decoding/receiving side): set up the UDP connection, use the generic API to manage source/repair symbols, to recover from erased source symbols. Test the whole transmission/reception chain. This work should enable to provide feedback on the Generic API I-D.</li>
 </ul>
 <h3 id="python-wrapper">Python wrapper:</h3>
 <ul>
-<li>T5.X:</li>
+<li>T5.X: (MJM, CA)</li>
 </ul>
 <h3 id="python-test-and-simulation-applications">Python test and simulation applications:</h3>
 <ul>
-<li>T6.X:</li>
+<li>T6.X: (MJM, CA)</li>
+</ul>
+<h2 id="lessons-learned-api-i-d-fixes-and-open-points-ietf104-hackathon">Lessons learned, API I-D fixes and open points @ IETF104 hackathon</h2>
+<ul>
+<li>clarify that this SWIF-codec is not meant to be thread-safe.</li>
+<li>do we really need the encoder_reset_coding_window()? This is clearly useful at the decoder (specify a brand new coding window), but we expect most encoders to manage their encoding window continuously, without needing to reset it altogether. A decision needs to be taken: keep it or remove it.</li>
+<li>the esi_t is probably inappropriate. In certain situations, it may be a 64-bit long identifer, in other situations it may be an offet (e.g., see RLC for QUIC).</li>
+<li>clarification for buffer init/free in function swif_build_repair_symbol().</li>
 </ul>
 </body>
 </html>
