@@ -6,16 +6,6 @@ Saturday and Sunday, March 3-4, 2018, starting at 9:00, Grand Ballroom
 * [Github swif-codec repo](https://github.com/irtf-nwcrg/swif-codec)    
 
 
-## Expected participants
-
-* Vincent Roca
-* Marie-Jose Mbntpetit (Saturday)
-* François Michel
-* Kazuhisha Matsuzono
-* Cedric Adjih
-* Oumaima Attia
-* ???
-
 ## General topics to be discussed and agreed on
 
 ### Licencing considerations:
@@ -33,11 +23,18 @@ To be discussed:
 * Then work on decoder and test the whole chain: server - client. Add unitary tests for the decoder and the whole chain.
 * In parallel, work on Python wrapper and python applications.
 
+## Expected participants
+
+* (VR) Vincent Roca
+* (MJM) Marie-Jose Mbntpetit (Saturday)
+* (FM) François Michel
+* (CA) Cedric Adjih
+* (OA) Oumaima Attia
 
 ## Tasks
 
 ### SWIF Codec, encoder:
-* T1.01: glue between the generic API and RLC codec: the generic API is the one shared by all the SWIF codecs, an RLC flavor is needed as well as a link between the two ones.
+* T1.01: glue between the generic API and RLC codec
 * T1.02: work on GF(2^8) math library: reuse gardinet lib, understand how to use it, see if something is missing.
 * T1.03: work on encoder_create()
 * T1.04: work on encoder_release()
@@ -51,7 +48,6 @@ To be discussed:
 * T1.12: work on encoder_set_coding_coefs_tab()
 * T1.13: work on swif_encoder_generate_coding_coefs()
 * T1.14: work on encoder_get_coding_coefs_tab()
-
 
 ### SWIF Codec, decoder:
 * T2.01: work on new source or repair symbol reception
@@ -78,10 +74,8 @@ To be discussed:
 * T4.1: work on server (i.e., the encoding/sending side): requires to design a trivial packet format (transmission of the FEC OTI can be static on the opposite), set up the UDP connection, design a simple rate control scheme (to avoid saturating the receiver), and use the generic API to create repair symbols. This work should enable to provide feedback on the Generic API I-D.
 * T4.2: work on client (i.e., the decoding/receiving side): set up the UDP connection, use the generic API to manage source/repair symbols, to recover from erased source symbols. Test the whole transmission/reception chain. This work should enable to provide feedback on the Generic API I-D.
 
-
 ### Python wrapper:
 * T5.X:
-
 
 ### Python test and simulation applications:
 * T6.X:
