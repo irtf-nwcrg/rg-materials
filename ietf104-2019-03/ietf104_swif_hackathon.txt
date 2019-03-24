@@ -5,7 +5,9 @@ Saturday and Sunday, March 3-4, 2018, starting at 9:00, Grand Ballroom
 
 -   [Hackathon
     wiki](https://trac.ietf.org/trac/ietf/meeting/wiki/104hackathon)\
--   [Github swif-codec repo](https://github.com/irtf-nwcrg/swif-codec)
+-   [Github swif-codec repo](https://github.com/irtf-nwcrg/swif-codec)\
+-   [Final recap
+    presentation](https://github.com/irtf-nwcrg/rg-materials/blob/master/ietf104-2019-03/swif-codec-hackathon-presentation.pdf)
 
 General topics to be discussed and agreed on
 --------------------------------------------
