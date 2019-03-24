@@ -23,13 +23,13 @@ To be discussed:
 * Then work on decoder and test the whole chain: server - client. Add unitary tests for the decoder and the whole chain.
 * In parallel, work on Python wrapper and python applications.
 
-## Expected participants
+## Hackathon participants
 
-* (VR) Vincent Roca
-* (MJM) Marie-Jose Mbntpetit (Saturday)
-* (FM) François Michel
 * (CA) Cedric Adjih
 * (OA) Oumaima Attia
+* (FM) François Michel
+* (MJM) Marie-Jose Montpetit
+* (VR) Vincent Roca
 
 ## Tasks
 
