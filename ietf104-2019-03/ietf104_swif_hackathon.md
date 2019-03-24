@@ -34,7 +34,7 @@ To be discussed:
 ## Tasks
 
 ### SWIF Codec, encoder:
-* T1.01: glue between the generic API and RLC codec
+* T1.01: (FM) glue between the generic API and RLC codec
 * T1.02: (CA) work on GF(2^8) math library: reuse gardinet lib, understand how to use it, see if something is missing.
 * T1.03: (OA) work on encoder_create()
 * T1.04: (OA) work on encoder_release()
@@ -88,5 +88,6 @@ To be discussed:
 * the esi_t is probably inappropriate. In certain situations, it may be a 64-bit long identifer, in other situations it may be an offet (e.g., see RLC for QUIC).
 * clarification for buffer init/free in function swif_build_repair_symbol().
 * clarification (added examples) for the definition of codepoints
-* typo (encoder instead of decoder) in swif_decoder_reset_coding_window (swif_decoder_t *dec);
+* typo (encoder instead of decoder) in swif_decoder_reset_coding_window (ptr to swif_decoder_t rather than swif_decoder);
+* update to the generic control block structure (addition of pointers to the codec specific versions of the API functions).
 

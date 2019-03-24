@@ -49,7 +49,7 @@
 <h2 id="tasks">Tasks</h2>
 <h3 id="swif-codec-encoder">SWIF Codec, encoder:</h3>
 <ul>
-<li>T1.01: glue between the generic API and RLC codec</li>
+<li>T1.01: (FM) glue between the generic API and RLC codec</li>
 <li>T1.02: (CA) work on GF(2^8) math library: reuse gardinet lib, understand how to use it, see if something is missing.</li>
 <li>T1.03: (OA) work on encoder_create()</li>
 <li>T1.04: (OA) work on encoder_release()</li>
@@ -106,6 +106,9 @@
 <li>do we really need the encoder_reset_coding_window()? This is clearly useful at the decoder (specify a brand new coding window), but we expect most encoders to manage their encoding window continuously, without needing to reset it altogether. A decision needs to be taken: keep it or remove it.</li>
 <li>the esi_t is probably inappropriate. In certain situations, it may be a 64-bit long identifer, in other situations it may be an offet (e.g., see RLC for QUIC).</li>
 <li>clarification for buffer init/free in function swif_build_repair_symbol().</li>
+<li>clarification (added examples) for the definition of codepoints</li>
+<li>typo (encoder instead of decoder) in swif_decoder_reset_coding_window (ptr to swif_decoder_t rather than swif_decoder);</li>
+<li>update to the generic control block structure (addition of pointers to the codec specific versions of the API functions).</li>
 </ul>
 </body>
 </html>
