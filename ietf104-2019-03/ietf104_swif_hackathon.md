@@ -93,4 +93,4 @@ To be discussed:
 * TODO: build_repair() cannot be used when the buffer is allocated locally. Error in the API.
 * TODO: during the end of session, at an encoder, should we call the callback each time we free a symbol or not?
 * Added INVALID_ESI to the API. Needed during session startup (first symbol submission).
-* TODO: fix  swif_encoder_get_coding_window_information() that is not appropriate when there's a list of non contiguous symbols (think about re-encoding use-cases).
+* TODO: swif_encoder_get_coding_window_information() is not appropriate when there's non contiguous symbols (e.g., with re-coding use-cases).

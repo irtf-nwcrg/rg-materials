@@ -144,3 +144,6 @@ Lessons learned, API I-D fixes and open points @ IETF104 hackathon
     callback each time we free a symbol or not?
 -   Added INVALID\_ESI to the API. Needed during session startup (first
     symbol submission).
+-   TODO: swif\_encoder\_get\_coding\_window\_information() is not
+    appropriate when there's non contiguous symbols (e.g., with
+    re-coding use-cases).
