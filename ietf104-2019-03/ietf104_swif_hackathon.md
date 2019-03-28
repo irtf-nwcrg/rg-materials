@@ -84,14 +84,20 @@ To be discussed:
 
 ## Lessons learned, API I-D fixes and open points @ IETF104 hackathon
 
+I-D/API fixes done:
+
 * clarify that this SWIF-codec is not meant to be thread-safe.
-* TODO: do we really need the encoder_reset_coding_window()? This is clearly useful at the decoder (specify a brand new coding window), but we expect most encoders to manage their encoding window continuously, without needing to reset it altogether. A decision needs to be taken: keep it or remove it.
-* TODO: the esi_t is probably inappropriate. In certain situations, it may be a 64-bit long identifer, in other situations it may be an offet (e.g., see RLC for QUIC).
 * clarification for buffer init/free in function swif_build_repair_symbol().
 * clarification (added examples) for the definition of codepoints
 * typo (encoder instead of decoder) in swif_decoder_reset_coding_window (ptr to swif_decoder_t rather than swif_decoder);
 * update to the generic control block structure (addition of pointers to the codec specific versions of the API functions).
+
+
+I-D/API fixes that remain to be done:
+
+* TODO: the esi_t is probably inappropriate. In certain situations, it may be a 64-bit long identifer, in other situations it may be an offet (e.g., see RLC for QUIC).
+* TODO: do we really need the encoder_reset_coding_window()? This is clearly useful at the decoder (specify a brand new coding window), but we expect most encoders to manage their encoding window continuously, without needing to reset it altogether. A decision needs to be taken: keep it or remove it.
 * TODO: build_repair() cannot be used when the buffer is allocated locally. Error in the API.
-* TODO: during the end of session, at an encoder, should we call the callback each time we free a symbol or not?
-* Added INVALID_ESI to the API. Needed during session startup (first symbol submission).
-* TODO: swif_encoder_get_coding_window_information() is not appropriate when there's non contiguous symbols (e.g., with re-coding use-cases).
+* TODO: during the end of session, at an encoder, should we call the callback each time we free a symbol or not? We need to clarify this.
+* Added INVALID_ESI to the API. Needed during session startup (first symbol submission). Use another approach to avoid reserving an ESI value to the INVALID state?
+* TODO: swif_encoder_get_coding_window_information() is not appropriate when there's non contiguous symbols (e.g., with re-coding use-cases). We need to decide what to do.
