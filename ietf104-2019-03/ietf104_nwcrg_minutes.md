@@ -15,17 +15,15 @@ Minutes taker: Dave Oran (thank you Dave!)
 
 Sliding Window FEC codec project (SWiF Codec) and relationships with draft-roca-nwcrg-generic-fec-api.
 
-Goals:    
- - design reference open-source codec, RLC-like, later RLNC;    
- - facilitate testing and adoption;    
- - debug the generic API (draft-roca-nwcrg-generic-fec-api).    
-Progress:    
+A first goal of the Hackathon project is to design reference open-source codec (RLC-like, later RLNC) in order to facilitate adoption.
+Another goal is to improve the generic API I-D (draft-roca-nwcrg-generic-fec-api).    
+
+Progress made on the SWiF codec:    
  - encoder almost done, test in progress, python wrapper in progress, started work on decoder;    
  - 4 problems in API fixed, 5 open problems remain.    
-The hackathon will continue in Montreal.
-The ultimate goal is to be able to show API is codec-indepedent by supporting at least 2 codecs in the hackathon.
+The hackathon will continue in Montreal (finish decoder?). Then we'll continue with RLNC support (Singapore?).
 
-No questions
+No questions.
 
 
 ## 02- "Quick status on Network coding and satellites I-D" (Nicolas Kuhn)
@@ -33,9 +31,11 @@ No questions
 
 Feedback from NWC RG and DTN WG, assessed comments from Lloyd Wood.
 New version spun based on this.
-Looking to move to RGLC. Chairs proposed doing this after confirmation on the list.
 
-No questions
+Comment (Chairs): Looking to move to RGLC. Chairs proposed doing this after confirmation on the list.
+
+No questions.
+
 
 
 ## 03- "Quick status on Network Coding for Content-Centric Networking / Named Data Networking: Requirements and Challenges" (Kazuhisha Matsuzono)
@@ -48,30 +48,30 @@ Updates:
  - added a section on security and privacy.     
 Got some more comments, plan to address them, respin the draft, then try to get RG last call.
 
-Commen (DaveO with ICNRG Chair hat on): give ICNRG a chance to review the next version, then we’ll have advice about readiness for NWCRG Last Call.
+Comment (DaveO with ICNRG Chair hat on): give ICNRG a chance to review the next version, then we’ll have advice about readiness for NWCRG Last Call.
 
 
 ## 04- "RLNC Background and Practical Considerations / RLNC Based Symbol Representation" (Kerim Fouli and Muriel Medard, remote)
-[draft-heide-nwcrg-rlnc-background and draft-heide-nwcrg-rlnc]
+(draft-heide-nwcrg-rlnc-background and draft-heide-nwcrg-rlnc)
 
 Separated background and symbol representation into different drafts.
 Latest comments (Salvatore and DaveO) will be addressed in next version.
 
-Q (Vincent): On slide 5, mentioned dynamic number of coefficients and symbols, but with a 4-bit field you’re are rather limited.    
+Q (Vincent): On slide 5, you mention a dynamic number of coefficients/symbols but with a 4-bit field you’re are rather limited.    
 A (Kerim): We thought there was a large field and small field. I will go back and check.    
 A (Muriel): If using as a seed, it's different, you have more choices.    
 
-Comment(Vincent): Need to tradeoff flexibility with detailed and efficient symbol representation. It's a difficult exercise that needs to be discussed on the list.     
+Comment (Vincent): Need to tradeoff flexibility with detailed and efficient symbol representation. It's a difficult exercise that needs to be discussed on the list.     
 A (Kerim): We might have different symbol representations for different classes of applications.     
-A (Muriel) We already had different representations in different implementations in the past.     
+A (Muriel): We already had different representations in different implementations in the past.     
 
 Q (Vincent): Do you intent to include more representations in this document? What’s the view for evolution?    
-A (Kerim): Not necessarily, might have different documents for different applications.
+A (Kerim): Not necessarily, might have different documents for different applications and different representations.
 	Topic for further discussion. Having one to bash on is useful to act as a baseline and is concrete.    
 Comment (Vincent): Agree.
 
 Q (Vincent): Plan to have PRNG (pseudo-random number generator) flexibility?    
-A (Muriel) Goal of  draft is to have a baseline concrete representation. It's a narrow but concreate and useful contribution.    
+A (Muriel): Goal of  draft is to have a baseline concrete representation. It's a narrow but concreate and useful contribution.    
 
 
 ## 05- "Adding Forward Erasure Correction to QUIC" (François Michel)

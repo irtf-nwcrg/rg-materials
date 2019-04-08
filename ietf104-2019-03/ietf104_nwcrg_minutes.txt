@@ -20,19 +20,19 @@ Minutes taker: Dave Oran (thank you Dave!)
 Sliding Window FEC codec project (SWiF Codec) and relationships with
 draft-roca-nwcrg-generic-fec-api.
 
-Goals:\
-- design reference open-source codec, RLC-like, later RLNC;\
-- facilitate testing and adoption;\
-- debug the generic API (draft-roca-nwcrg-generic-fec-api).\
-Progress:\
+A first goal of the Hackathon project is to design reference open-source
+codec (RLC-like, later RLNC) in order to facilitate adoption. Another
+goal is to improve the generic API I-D
+(draft-roca-nwcrg-generic-fec-api).
+
+Progress made on the SWiF codec:\
 - encoder almost done, test in progress, python wrapper in progress,
 started work on decoder;\
 - 4 problems in API fixed, 5 open problems remain.\
-The hackathon will continue in Montreal. The ultimate goal is to be able
-to show API is codec-indepedent by supporting at least 2 codecs in the
-hackathon.
+The hackathon will continue in Montreal (finish decoder?). Then we'll
+continue with RLNC support (Singapore?).
 
-No questions
+No questions.
 
 02- "Quick status on Network coding and satellites I-D" (Nicolas Kuhn)
 ----------------------------------------------------------------------
@@ -40,10 +40,12 @@ No questions
 (draft-irtf-nwcrg-network-coding-satellites)
 
 Feedback from NWC RG and DTN WG, assessed comments from Lloyd Wood. New
-version spun based on this. Looking to move to RGLC. Chairs proposed
-doing this after confirmation on the list.
+version spun based on this.
 
-No questions
+Comment (Chairs): Looking to move to RGLC. Chairs proposed doing this
+after confirmation on the list.
+
+No questions.
 
 03- "Quick status on Network Coding for Content-Centric Networking / Named Data Networking: Requirements and Challenges" (Kazuhisha Matsuzono)
 ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -58,14 +60,14 @@ Updates:\
 Got some more comments, plan to address them, respin the draft, then try
 to get RG last call.
 
-Commen (DaveO with ICNRG Chair hat on): give ICNRG a chance to review
+Comment (DaveO with ICNRG Chair hat on): give ICNRG a chance to review
 the next version, then we'll have advice about readiness for NWCRG Last
 Call.
 
 04- "RLNC Background and Practical Considerations / RLNC Based Symbol Representation" (Kerim Fouli and Muriel Medard, remote)
 -----------------------------------------------------------------------------------------------------------------------------
 
-\[draft-heide-nwcrg-rlnc-background and draft-heide-nwcrg-rlnc\]
+(draft-heide-nwcrg-rlnc-background and draft-heide-nwcrg-rlnc)
 
 Separated background and symbol representation into different drafts.
 Latest comments (Salvatore and DaveO) will be addressed in next version.
