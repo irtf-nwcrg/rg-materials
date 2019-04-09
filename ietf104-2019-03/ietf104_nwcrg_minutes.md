@@ -10,7 +10,7 @@ Saturday and Sunday, March 23-24th, 2019.
 
 ## nwcrg meeting@ietf104
 
-Thursday, March 28, 2019, Afternoon session I, 13:50-15:50, Berlin-Brussels
+Thursday, March 28, 2019, Afternoon session I, 13:50-15:50, Berlin-Brussels     
 [Meeting materials](https://github.com/irtf-nwcrg/rg-materials/tree/master/ietf104-2019-03)     
 [Meetecho record](https://play.conf.meetecho.com/Playout/?session=IETF104-NWCRG-20190328-1350)
 
