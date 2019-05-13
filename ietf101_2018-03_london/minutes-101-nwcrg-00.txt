@@ -1,0 +1,150 @@
+---------------------------------
+NWCRG @ IETF-101 (London) minutes
+---------------------------------
+Thursday, March 22nd, 2018
+Afternoon session I 13:30-15:30 
+
+More information: https://datatracker.ietf.org/rg/nwcrg/
+
+Meetecho archive: https://play.conf.meetecho.com/Playout/?session=IETF101-NWCRG-20180322-1330
+              or: https://www.youtube.com/watch?v=4GXNQjyNISw&t=0s&list=PLC86T-6ZTP5j_HaBNdfPbgxGIp22cnaWS&index=136
+Meeting material: https://datatracker.ietf.org/meeting/materials/#nwcrg
+IETF 102 Agenda and material: https://datatracker.ietf.org/meeting/agenda.html#2018-03-22-083000
+
+Minutes taker: Nicolas Kuhn (thanks!)
+
+
+00- Welcome, administrative and general matters, information for new participants (Chairs) (10')
+
+See chair slides. 
+In particular: 
+- we are planning to meet at IETF 102, Montreal, July 14
+- we are planning to have an interim meeting. The tentative date is Tuesday Sept. 25th, 2018. It will be in Boston because there's a critical NC mass in the area. Remote participation will be possible.
+
+
+PART I: NC building blocks
+==========================
+
+01- "Tetrys, an On-the-Fly Network Coding protocol" (Jonathan Detchart) (10+5')
+        draft-detchart-nwcrg-tetrys-04
+
+The goal of the presentation is not on the protocol itself but rather the document and how to go forward.
+
+Dave Oran: Clarification. What are the overlaps between this and the TSVWG FECFRAME and RLC work?
+Jonathan Detchart: We have common information but this is a different format. 
+Dave: Which approach to use for what field of applicability? Guidance is needed.
+Marie-Jose Montpetit (from the floor) : we've had discussions with other persons involved in other drafts. We want to go for open building blocks that can be used independently. 
+Dave: We don't have any a main document that presents which solution is appropriate for a given use-case. Who decides when to call what API? Guidance is needed to help the community use the intended building blocks. We can do some experimentations.
+Vincent Roca (from the floor and as author of the FECFRAME/RLC documents): Good point. There are overlaps between FECFRAME and Tetrys as well as work on RLNC (next presentation). We wanted to put this question explicitly on the table after next presentation.
+Marie-Jose: we intend to start discussions on the list on how to address this point.
+Muriel Médard: Is recoding envisioned in the draft?
+Jonathan: it is basically end-to-end without recoding, even if we once considered this possibility.
+
+
+02- "Random Linear Network Coding (RLNC)-Based Symbol Representation" (Janus Heide) (10+5')
+        draft-heide-nwcrg-rlnc-00
+
+Vincent : Thank you for this initiative. A document that describes RLNC is on our milestones. It is also important as it includes a header format discussion. I have technical comments that can be taken offline. Between FECFRAME, RLNC and TETRYS, we see the potential to have common and reusable headers. 
+I propose to split this I-D into a document that only focusses on RLNC and a separate document specifically on header formats. For this second document, I would suggest that the authors of the different proposals collaborate.This will of course be discussed on the list.
+Jonathan: Do you want several documents with the different header formats? 
+Vincent: We need one document but not necessarily a single header format. We do not have the answer today, this is still an open question.
+Muriel: To make sure: do you want a general format document?
+Vincent: One document that defines a header building block.
+Dave: Goal is good, but if we have n formats and m protocols, at the end we have an n * m problems. We have seen this in the IETF: too many parallel efforts may result in big problems. We may constrain the number of formats or number of protocols.
+Dave: What in this document is specific to RLNC?
+Muriel: Nothing in the document is specific to RLNC in terms of format, RLNC is just a motivating example. There have been proposals on doing RLNC without conveying the coefficient since there are other ways of recovering them.
+
+Vincent: Jonathan, can you produce a new version of the document that focusses on a generic protocol with building blocks that are moved somewhere else whenever possible?
+Jonathan: Yes. We could imagine a generic format where re-encoding would only be an option, for instance with a field that indicates that coding coefficients are inserted.
+Muriel: For re-encoding, you may not need to convey the coefficients, it's not a sine qua non condition.
+
+Vincent: if you believe an IPR disclosure should be made for this document, then do that rapidly (BCP 79).
+Gianmarco Tasca (CodeOn): A quick correction on the wording. IPR disclosure "must be made as soon as reasonably possible" (BCP 79). The IP is shared between 8 universities and we are working on the IPR disclosure, discussing the best licensing strategy and approach.
+Vincent: But you confirm that there will be an IPR disclosure on this document?
+Gianmarco: Yes. 
+
+
+03- "Generic, common NC API" (Vincent Roca) (10+5')
+        draft-roca-nwcrg-generic-fec-api-01
+
+Q1: Should the API be compatible with both block codes and sliding window codes?
+
+Dave: Can't you do a block code with a sliding window API?
+Vincent: We can do it - a block code is a specific sliding window code. There are however practical differences. 
+Muriel: I want to echo Dave's point. There is a large literature bringing together block code and sliding window. The blocks code may overlap. 
+Vincent: Yes, but when you go into the details, it is not easy to have an API that let you do both without being too complicated.
+Muriel: We want it to be practical.
+
+Q2: Should the ADU to source symbols mapping be done by the codec?
+
+Dave: By "outside of the codec", do you mean outside the API or inside the API? 
+Vincent: The codec will only consider symbols : the mapping will be done before.
+Dave: You have to demonstrate that you don't get multiple data copies when you do that.
+
+Q3: Should the packet headers be managed by the codec?
+
+Q4: Should timing considerations be managed by the codec?
+
+Q5: What about hardware constraints?
+
+Dave: High level comment: you do not want to structure the API so that if you have a split software (e.g., for application and protocol)/hardware (e.g., FPGA for coding operations) implementation, you don't have to pass every symbol independently across the software/hardware boundary, because you'll blow the latency gain out. If uncoded and coded symbols are sent back and forth individually across the hardware and software boundary, it won't work very well. So you have to consider an API in which there's inherent ability to do batching, so that the interactions are made over a reasonably large number of input and output symbols.
+
+Emmanuel Lochin: Are you sure that we do not need to have time-stamping in the codec?
+Vincent: For the moment, this is our opinion.
+Emmanuel: E.g., with TCP you may need to estimate end-to-end delay.
+Vincent: This would be done in the application, not the codec. If you have strong opinions on why we should consider it, let us know.
+Muriel: Discussion on hardware implementation.
+Marie-Jose: Go to the list for further comments/inputs.
+
+
+04- "Network Coding and Congestion Control" (Nicolas Kuhn) (5')
+
+Quick status on the document, and question on what to do next, if there is sufficient energy and material in the group to go further.
+
+Ian Swett: It's interesting but you have to precise the scope of the document.
+There are things like coding for satellites that may be unaware of TCP and QUIC but might still interact with congestion control that's running end-to-end. There's also the question of end-to-end versus re-encoding. Doing both is useful but is a bigger task.
+Vincent: If this document could explain we can do things in an intelligent way so that coding does not break other things, that would be valuable.
+Dave: There's additional complexity with coding schemes that adapt to the type of error they have seen, and if you're not careful you can easily create more congestion. There's not enough expertise in a classic congestion control transport group nor in a coding group like you. It's a really good research problem and we need expertise from both sides. I like adding dynamic coding here because it's gonna hit us. I've seen the draft on using ECN, it's very nice but it's only part of the solution.
+Spencer Dawkins: (as AD responsible of the QUIC WG) you may want to speak about that with QUIC chairs to make sure to involve the right people from that side. (as IRSG member) Between IETF and IRTF we'll find a place to have this discussion.
+Muriel: this is a great idea.
+
+
+PART II: Use-cases for NC
+=========================
+
+05- "Coding for QUIC" (Ian Swett) (10+5')
+        draft-swett-nwcrg-coding-for-quic-00 (to be updated)
+
+
+Dave: Question on encoding on top or below encryption: do you have to reorder before you decrypt?
+Ian: No you do not.
+
+Dave: things may work out better if we were timing it with what is happening in multi-path discussion. This is a good moment to move forward. 
+Lars (with QUIC chair hat): if you want to do anything on QUIC this year, it is too late. We are trying to have a single path HTTP QUIC version for the moment. The WG will not have official multi-path activities before the November dead-line. 
+Cedric Thienot (Expway): I come from a 3GPP world where we use Raptor code for RTP. In that context, having a different stream for coded data makes sense, in particular for backward compatibility.
+
+
+06- "Progress on the network coding and satellites draft" (Nicolas Kuhn) (10+5')
+        draft-kuhn-nwcrg-network-coding-satellites-02
+
+Muriel: I like the taxonomy of the different problems. We have pointers on activity made here that we can share to the group. 
+
+
+07- "NC and ICN/CCN research challenges" (Kazuhisha Matsuzono) (10+5')
+        draft-matsuzono-nwcrg-nwc-ccn-reqs-01
+
+NB: presentation made both in NWCRG and ICNRG.
+
+Vincent: Is the security and privacy discussion to add related to coding or to ICN in general, which would be a huge task?  
+Kazuhisha: Specific to coding.
+Muriel: It's interesting to look at convolutional coding per se, indeed. I'd be happy to participate.
+Vincent: Last we said it was great to have a shared activity between NWCRG and ICNRG. Does it work?
+Dave (with ICNRG chair): It's working fine.
+
+
+08- "Softwarisation and Virtualisation of Network Coding Function and link between NWCRG-NFVRG"
+	(Ángeles Vázquez-Castro) (10+5')
+
+Dave: In the section on flow engineering, I was expecting a discussion on closed versus open loop control. Most of these naive chaining functions are open-loop control. With NFV you may not need loop control, but it is needed for network control.
+Angeles: At the moment we define which block we want to look into. How to do that will come after and this is a very good input.
+

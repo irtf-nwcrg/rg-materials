@@ -1,0 +1,157 @@
+NWCRG @ IETF-99 (Prague), Thursday, July 20th, 2017
+---------------------------------------------------
+Minutes (Draft - 2017-07-25)
+
+Minute-taker: Cedric Adjih and Vincent Roca
+
+
+https://www.ietf.org/proceedings/99/agenda/agenda-99-nwcrg-06.txt
+https://datatracker.ietf.org/meeting/99/materials.html#irtf
+Meetecho record: https://play.conf.meetecho.com/Playout/?session=IETF99-NWCRG-20170720-1330
+    
+
+00- Welcome, administrative and general matters. Goals of this meeting (Vincent Roca)
+
+
+PART I: Use-cases where end-to-end coding or network coding can be beneficial
+=============================================================================
+
+NC for satellite communications
+-------------------------------
+ 
+01- "Network coding and satellites" (Nicolas Kuhn, CNES, and Emmanuel Lochin (ISAE), remote)
+	https://www.ietf.org/proceedings/99/slides/slides-99-nwcrg-01-kuhn-network-coding-and-satellite-communications-02.pdf
+	  
+	Vincent Roca (VR): I appreciate your initiative in setting up this I-D and the effort made in collecting views/interests
+		of different people. Having a design team for this topic is great.
+
+	Marie Jose Montpetit (MJM): I have the feeling this I-D will just look at satellite links while in fact this link is
+		part of Internet. Also, do you mean NC at the PHY layer or FEC at the PHY layer?
+	Nicolas Kuhn and Emmanuel Lochin (NK&EL): Currently deployed system all use FEC at the PHY layer (DVB-* standards).
+		But we do not want to focus only on PHY layer FEC coding, we consider more complex scenarios with multi-gateways,
+		TCP split connections, etc. It goes well beyond PHY layer.
+
+	Victor Firoiu (VF): thanks for the initiative. What are the research aspects in this work?
+	NK&EL: yes, we want to provide a view of what solutions could be deployed, both on the experimental and research sides.
+	VR: you could perhaps make it more explicit with a « research challenges » section.
+	NK&EL: yes, in ICNRG there is a document specific to open research challenges and we could do the same here.
+
+
+NC for ICN/CCN
+--------------
+
+02- "CCN and Network Coding" (Cedric Westphal)
+        Also covers NetCodCCN (Infocom'16)
+	https://www.ietf.org/proceedings/99/slides/slides-99-nwcrg-02-westphal-ccn-and-network-coding-00.pdf
+
+
+03- "Low latency low loss streaming using in-network coding and caching" (Hitoshi Asaeda)
+	(Infocom'17)
+	https://www.ietf.org/proceedings/99/slides/slides-99-nwcrg-03-asaeda-low-latency-low-loss-streaming-using-in-network-coding-and-caching-00.pdf
+
+	VR: Thomos Nikolaos sent me an email telling me he couldn't join today but volunteers to participate.
+		Maybe it would make sense to try setting up a design team as with the « NC and satellite » topic.
+	Presenters: agreed
+
+	Allison Mankin (AM): it's probably meaningful to have a common template for both documents. Lots of aspects
+		about why you are doing this and what are the components could be common.
+	VR: agreed. There could be a generic part, common to all documents, and a use-case specific part.
+
+	Hitoshi Asaeda (HA): the « research challenges » could be in a single document.
+
+	Cedric Adjih (CA): I'm interested by the topic.
+
+
+Other NC potential use-cases
+----------------------------
+
+04- "Some Network Coding Use Cases" (Vincent Roca, on behalf of Rolf Sperber (remote))
+
+	Slides quickly presented by Vincent Roca (sorry for not being clear on what was expected).
+	Lists potential a few domains for potential NC (high density sensors, train, vehicles, content storage).
+
+
+05- "Generic Robust Low Latency Tunelling: proposal for a performance enhancing tunnel" (Marie-José Montpetit, remote) (10')
+	https://www.ietf.org/proceedings/99/slides/slides-99-nwcrg-05-montpetit-generic-robust-low-latency-tunneling-a-proposal-for-a-performance-enhancing-tunnel-00.pdf
+
+	VR: do you believe it is useful to do re-coding?
+	MJM: it could be, but we didn't think about it yet.
+	VR: what is a micro-flow?
+	MJM: do we want a tunnel to be end-to-end, with all flows multiplexed into it, or do we want the tunnel to be aware
+		of each individual flow (i.e., consider micro-flows)?
+	VR: is there interest? I know there is Akamai, anybody else?  I (VR) am interested as individual. We will ask to the mailing list.
+
+	VF: a little bit out of the initial charter, we did not thought about it so far, but very interesting.
+
+	EL&NK: sounds more like a problem of network traffic engineering than network coding. 
+	MJM: agreed. It is more putting NC into a traffic engineering toolkit. But as it implies the use of NC, it is related to this group.
+		This work will not lead to new codes, of course. 
+	NK&EL : there are other groups working specifically on tunnelling.
+	MJM: agreed. If the group believes it is not related to NWCRG, maybe we could address it within a transport WG.
+	Brandon Williams (BW): with respect to the network engineering aspects, the codes and their tuning directly impact the network quality
+		and the quality of experience for the application. The tuning of codes for video would be different from the tuning for data
+		transfers. The focus is on the tuning of the parameters and the negotiation of the aspects of the codes themselves that have an
+		impact of network engineering.
+	NK&EL: much clearer now and we understand the need for it.
+
+	VR: let’s continue on the list.
+
+
+PART II: On the coding side
+===========================
+
+Low complexity coding
+---------------------
+
+06- "Pyrit: Polynomial Ring Transforms for Fast Erasure Coding" (Jonathan Detchart)
+
+	https://www.ietf.org/proceedings/99/slides/slides-99-nwcrg-06_detchart_pyritpdf-01.pdf
+
+	VR: thanks for making this presentation very understandable, skipping complex details.
+	CA: you go from field to ring, operation, and go back from ring to field: is it isomorphic ?
+	Jonathan Detchart (JD): not all operations are isomorphic, but they are homomorphic most of the time.
+	CA: why don't you stay in the ring?
+	JD: the representation in the ring is larger which finally creates problems. So you need to go back.
+
+	Morten Pedersen (MP): very interesting. I’d like to know more about the transforms and their speed.
+	JD: [details the two transforms] from the field to the ring, it's just a matter of adding a parity bit, and
+		the reverse transform is about removing this bit.
+	MP: reminds me of some work on optimal prime field where there was a mapping as well. I'm impressed by performance.
+
+
+On the benefit of sliding window codes (network coding?) to IETF protocols
+--------------------------------------------------------------------------
+
+07- "Less Latency and Better Protection with AL-FEC Sliding Window Codes: a Robust Multimedia CBR Broadcast Case Study" (Vincent Roca)
+	https://www.ietf.org/proceedings/99/slides/slides-99-nwcrg-07-roca-less-latency-and-better-protection-with-sliding-window-codes-a-robust-multimedia-cbr-broadcast-case-study-01.pdf
+
+	somebody@Akamai: did you use Raptor or RaptorQ codes?
+	VR: we used the "old" Raptor codes that are part of 3GPP MBMS standard. Anyway, Reed-Solomon are ideal
+		codes and even with RaptorQ, you could not achieve better erasure recovery performance.
+
+	MJM: have you have thought about other convolutional codes, or just sliding window?
+	VR: we considered the simplest sliding window codes, those that are described in our TSVWG I-D.
+
+	VF: very interesting. You considered fixed rate coding, but other protocols may also need dynamic rate adaptation, or others may
+		stream content for ever until all receivers got the content (as with fountain codes).
+	VR: we are not considering any dynamic adaptation in this work. This is a broadcast/multicast scenario, so there's necessarily a
+		single stream for all receivers and you need to define all parameters in advance.
+		But with a unicast scenario involving feedback messages, adding a dynamic adaptation of RLC parameters would not be a problem.
+
+
+08- "FEC codes and QUIC" (Ian Swett)
+	https://www.ietf.org/proceedings/99/slides/slides-99-nwcrg-08-swett-quic-fec-00.pdf
+
+	MP: running FEC codes are no longer a problem, even on lightweight embedded platforms (e.g., smartphones).
+		You'll find many works including ours confirming this.
+
+	(somebody): if you want to test with sliding windows in QUIC, is there are a good starting point?
+	IS: Going to the implementation would be the most easier approach. The Chromium one is pretty close to what we are using internally.
+		It's C++, very fast, and recommended. There is another one but I don't know how up-to-date it is.
+
+	NK&EL: we did not understood the CDF drawing. What is the QUIC window size?
+	IS: It's essentially packet losses per window. The window size could be different across tests.
+		It's not exactly what you are used for. The figure itself comes from 1 week of Google traffic.
+
+	VR: I think this is a very important topic. Thanks to everybody and let’s continue on the list.
+

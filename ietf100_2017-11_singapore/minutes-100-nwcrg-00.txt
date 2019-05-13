@@ -1,0 +1,202 @@
+NWCRG @ IETF-100 (Singapore)
+----------------------------
+Thursday, November 16th, 2017
+Afternoon session II 15:50-17:50 
+Room: Orchard
+
+Materials: https://datatracker.ietf.org/meeting/100/proceedings#irtf
+Audio record: https://www.ietf.org/audio/ietf100/ietf100-orchard-20171116-1550.mp3
+
+
+00- Welcome, administrative and general matters, information for new participants
+01- Interim meeting: quick feedbacks (Chairs) 
+
+Please note that nwcrg wiki is available at URL: https://trac.ietf.org/trac/irtf/wiki/nwcrg
+(be careful of bad pointers in datatracker/irtf web pages... To be fixed).
+New in nwcrg: name + charter + milestones. See: https://datatracker.ietf.org/group/nwcrg/charter/
+Quick feedback on Sept. 19th Interim meeting.
+
+Allison Mankin (IRTF): it's important to focus on hard problems rather than use-cases. The same
+	document that tries to solve problems may apply to several use-cases. Publishing RFCs is
+	expensive so use them well.
+Chairs: Agreed.
+
+
+PART I: Coding aspects
+======================
+
+02- NC for new members and existing network codes/protocols (Chairs)
+
+Quick introduction to what nwcrg is about as well as non-goals.
+
+Dave Oran (Network Systems Research & Design): Is it the same as "erasure codes"? The term
+	"erasure" is not mentioned.
+Vincent: Sure, loss and erasure are synonymous.
+
+
+03- Generic, common NC API (Vincent Roca)
+        draft-roca-nwcrg-generic-fec-api-00
+
+API with the core NC codec. It will not consider protocol-level functionalities (CC, header
+creation/processing, SACK if any, etc.) that are essential but out of scope of this API.
+This is the first step towards a free, open-source codec.
+BTW, if anybody knows candidate C/C++ codecs, please tell us.
+
+Dave: What if the codec is in FPGA? In that case bits may have to remain in the gates.
+Vincent: I don't have any experience but that's a very good point.
+
+Ian Swett: For next step it would be useful to try several of these. We used to have a
+	stupidly difficult to use API [VR: for another component] in QUIC v1 until people
+	came with the right things to do.
+Vincent: Sure. All I-D co-authors have practical experience developing software codecs.
+	This is key to success.
+
+Dave: It would be very good to have a null codec to measure separately the effects of
+	the API on performance.
+Vincent: Sure. Typically, data copies is known to cost a lot.
+
+
+PART II: Use-cases where NC could be beneficial
+===============================================
+
+NC for satellite communications
+-------------------------------
+
+04- "Network coding and satellites" (Nicolas Kuhn)
+        draft-kuhn-nwcrg-network-coding-satellites-01
+
+Goal is to try to identify what is currently deployed and challenges of using NC
+with satellites. An issue with satellite industry is the lack of open standards.
+For the moment, four research axes are identified. Please contribute.
+
+Marie-José: I could help. What are the limits of the satellite network? In my
+	experience it's important since there can be losses in many different
+	places, and probably not in the satellite link itself.
+Nicolas: Yes, the architecture is complex and loss may happen in the gateway.
+	We also want to consider mobile situations that will cause physical layer losses.
+
+(?) Huawei: What are the links with NFVRG?
+Nicolas: We want to virtualize some of these functions/components.
+
+Simon Pietro Romano (Univ. of Napoli): Thank you, that's a very useful document.
+	Also, we're co-authoring an I-D with Angeles Vazquez-Castro on the NFVRG/NC topic.
+	There's also a EU project that uses NC for content delivery networks using hybrid
+	networks (satellite + terrestrial) and we'd be glad to share information.
+Nicolas: We're very interested by the project as we need some caching.
+	Concerning NFVGR, we essentially want to focus on how to deploy that in satellite
+	networks today.
+
+Dean Bogdanovic (Volta Networks): Are you aware of Delay Disruptive Network WG? They
+	are working on data models to define communications.
+
+
+NC for ICN/CCN
+--------------
+
+05- "NC and ICN/CCN research challenges"
+   (Hitoshi Asaeda/Kazuhisha Matsuzono, potentially with Cedric Westphal)
+
+Same presentation as the one made during ICNRG meeting.
+This document describes requirements and research challenges for NC and CCN/NDN.
+
+Dave: You could statically decide that the coding vector is from the producer.
+	Then only one possible coding vector for all possible consumers. If it's
+	from the content requestor, then the coded packets cannot be produced in
+	advance and there's some latency. I would decide as a separate design question.
+
+Allison: How to proceed and decide what to do in NWCRG and what to do in the ICNRG?
+	Should the I-D be split?
+Marie-Jose: Coding aspects should be here while application aspects should be in ICNRG.
+Dave: (as ICNRG co-chair): The longer we can wait until we split, the better, because
+	we need cross-RG discussions.
+Chairs: We agree.
+
+
+NC and QUIC
+-----------
+
+06- "FEC codes and QUIC" (Ian Swett)
+
+More details on how NC could be done within QUIC, the various options.
+See slides for implementation pointers for experimental work.
+
+Dave: What about multipath? Given that QUIC does not do multipath today.
+Ian: People want to experiment first with multipath.
+Dave: The point is that NC gets a lot of value if you do multipath, otherwise there
+	will be less incentive.
+Angeles Vazquez-Castro (Universitat Autonoma de Barcelona): Fully agree. NC is a
+	network function and we need to think in advance about all the objectives.
+Nicolas: Indeed there's an interaction between NC and Congestion Control. In case of
+	multipath, there will be impacts but in a totally different way than in unicast. 
+Dave: Let me summarize: multipath creates main changes on QUIC congestion control,
+	independently from NC. In that case we'll need multipath congestion control.
+	And people will see more value for this work if it considers multipath.
+Ian: Do you know previous works on this domain?
+Angeles: There's pre-work on multipath TCP that can help.
+
+
+PART III: Research Project Updates
+==================================
+
+07- "On the joint use of TCP and network coding" (Emmanuel Lochin) (10')
+
+This talk is about signaling to TCP that a loss happened although it has been recovered
+thanks to NC at the receiver. Re-using ECN marking to that purpose avoids having to do
+any modification to TCP, using only existing mechanisms.
+
+(?): Do you intend to issue an IPR Disclosure?
+Emmanuel: Yes, it will be done.
+
+Vincent: In figures, does the Y-axis represent the goodput or throughput?
+Emmanuel: Only the throughput is presented.
+
+
+08- "NC and Congestion Control: problem statement, potential approaches, status"
+
+Marie-Jose, on behalf of William Sears/Brandon Williams.
+This talk is about interactions between NC and congestion control, and experience with
+packet losses at Akamai. This topic is recognized as a major topic for the group.
+A draft is neededed (London probably). Collaborations are welcome.
+
+Dave: in a delay based CC scheme, accuracy in measuring delay is essential. Do you
+	believe the computation cost of reconstructing packets may impact the delay
+	estimation?
+Marie-Jose: No. Cost in reconstructing packets is very low, especially with systematic codes.
+Nicolas: BBR is more a rate based protocol even if rate is function of delay.
+Marie-Jose: Agree. But non-loss based congestion control is something we'd like to look at.
+Ian: FEC should not have connections with congestion control, it's just for faster loss
+	recovery.
+Marie-Jose: In the past people we using NC supported UDP tunnels and were very happy of the
+	results, ignoring the effects on other TCP flows. We need to show our solutions
+	does not harm the Internet.
+Emmanuel: Fully agree.
+Michael Welzl (Univ. Oslo): One of the benefits of ECN is that you can almost be loss-free. 
+	You could recover a loss with NC but then signal that a loss happened and do the
+	same as ECN.
+Marie-Jose: Yes, this is the idea of signaling something. This is why it's important to
+	have a document that catches all these ideas, something we can showed to somebody
+	who believes that coding necessarily kills the network.
+Dave: Let's not go over the 20 years of mistakes: we need to build something that
+	distinguishes losses caused by congestion and other types of losses. We may
+	have an opportunity with QUIC congestion control to do that.
+Marie-Jose: Sure. This is why it's important for the group to consider that problem.
+
+
+09- "Network coding and Multihop Wireless Networks" (Cedric Adjih)
+
+This talk discusses a NC based solution with re-encoding within a multihop
+wireless network. 
+
+Emmanuel: How do you select the repeaters? Does it follow a stochastic process?
+Cedric: Yes. Every node repeats coded packets but waits for a random time that
+	depends on the state. If there are lots of losses, more coded packets
+	are sent.
+Vincent: How is your FEC codec specific to your use-case? Could we reuse it for
+	the open-source codec?
+Cedric: I don't think it's specific.
+Vincent: What's the future of this work?
+Cedric: It's a really preliminary version. Next step is to clean up and release
+	entire protocol. Not immediately.
+
+
+Chairs: Thanks everybody for this successful meeting!
