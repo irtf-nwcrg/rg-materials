@@ -1,4 +1,4 @@
-# IETF 105 NWCRG Meeting Agenda (v0)
+# IETF 105 NWCRG Meeting Agenda (v1)
 
 * [Datatracker](https://datatracker.ietf.org/rg/nwcrg/) 
 * [Github](https://github.com/irtf-nwcrg/rg-materials/)
@@ -30,19 +30,15 @@ Relationships with draft-roca-nwcrg-generic-fec-api.
 (Nicolas Kuhn) (15+5')    
 (draft-irtf-nwcrg-network-coding-satellites)    
 
-#### 03- "Quick status on Network Coding for Content-Centric Networking / Named Data Networking: Requirements and Challenges"
-TBC    
-(draft-irtf-nwcrg-nwc-ccn-reqs)    
-
-#### 04- "RLNC Background and Practical Considerations / RLNC Based Symbol Representation"
+#### 03- "RLNC Background and Practical Considerations / RLNC Based Symbol Representation"
 TBC
 (draft-heide-nwcrg-rlnc-background and draft-heide-nwcrg-rlnc)    
 
-#### 05- "Update of the Coding for QUIC document"
+#### 04- "Update of the Coding for QUIC document"
 (Vincent Roca) (10+5)    
 (draft-swett-nwcrg-coding-for-quic)    
 
-#### 06- "Coding for QUIC Reference Implementation"
+#### 05- "Coding for QUIC Reference Implementation"
 (François Michel - remote) (5+5)    
 
 
