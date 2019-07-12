@@ -26,23 +26,19 @@ News from the FECFRAME-ext/RLC/TinyMT32 standardisation (TSVWG)
 Sliding Window FEC codec project (SWiF Codec).    
 Relationships with draft-roca-nwcrg-generic-fec-api.
 
-#### 02- "Quick status on Network coding and satellites I-D"
+#### 02- "Status Network coding and satellites I-D"
 (Nicolas Kuhn) (15+5')    
 (draft-irtf-nwcrg-network-coding-satellites)    
 
-#### 03- "RLNC Background and Practical Considerations / RLNC Based Symbol Representation"
-TBC
-(draft-heide-nwcrg-rlnc-background and draft-heide-nwcrg-rlnc)    
-
-#### 04- "Update of the Coding for QUIC document"
+#### 03- "Update of the Coding for QUIC document"
 (Vincent Roca) (10+5)    
 (draft-swett-nwcrg-coding-for-quic)    
 
-#### 05- "Coding for QUIC Reference Implementation"
+#### 04- "Coding for QUIC Reference Implementation"
 (François Michel - remote) (5+5)    
 
 
 --    
-Total allocated time: 65'
+Total allocated time: 65'    
 
-Time balance: 55'
+Time balance: 55'    
