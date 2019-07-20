@@ -28,7 +28,7 @@ Saturday and Sunday, July 20-21, 2019, starting at 9:00
 * T1.01: - DONE - glue between the generic API and RLC codec
 * T1.02: - DONE - work on GF(2^8) math library: reuse gardinet lib, understand how to use it, see if something is missing.
 * T1.03: - DONE - work on encoder_create()
-* T1.04:  work on encoder_release()
+* T1.04: - DONE - work on encoder_release()
 * T1.05: - DONE - work on encoder_set_callback_functions()
 * T1.06: work on swif_encoder_set/get_parameters()
 * T1.07: - DONE - work on swif_build_repair_symbol(): requires to generate the coding coefficients (see RLC I-D) and to computate of the linear combination.
@@ -36,7 +36,7 @@ Saturday and Sunday, July 20-21, 2019, starting at 9:00
 * T1.09: - DONE - work on encoder_add_source_symbol_to_coding_window()
 * T1.10: work on encoder_remove_source_symbol_from_coding_window()
 * T1.11: - DONE - work on encoder_get_coding_window_information()
-* T1.12: work on encoder_set_coding_coefs_tab()
+* T1.12: - DONE - work on encoder_set_coding_coefs_tab()
 * T1.13: work on swif_encoder_generate_coding_coefs()
 * T1.14: work on encoder_get_coding_coefs_tab()
 
