@@ -4,30 +4,31 @@ Saturday and Sunday, July 20-21, 2019, starting at 9:00
 
 * [Hackathon wiki](https://trac.ietf.org/trac/ietf/meeting/wiki/105hackathon)    
 * [Github swif-codec repo](https://github.com/irtf-nwcrg/swif-codec)    
+* Slack discussion forum (ask Vincent)
 * [Final recap presentation](https://github.com/irtf-nwcrg/rg-materials/blob/master/ietf105-2019-07/swif-codec-hackathon-presentation.pdf)
 
 
 ## General topics to be discussed and agreed on
 
-N/A
+### Licencing considerations:
+* Change for a Simplified BSD licence, in accordance with BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents.
+
 
 ## Hackathon participants
 
 * (CA) Cedric Adjih
-* (OA) Oumaima Attia (?)
 * (FM) François Michel (remote, limited)
 * (MJM) Marie-Jose Montpetit
 * (VR) Vincent Roca
 
-## Tasks (including completion status)
 
-**NB: topics below are carbon copy of IETF104 hackathon. They will be updated before IETF105 hackathon8**
+## Tasks (including completion status)
 
 ### SWIF Codec, encoder:
 * T1.01: - DONE - glue between the generic API and RLC codec
 * T1.02: - DONE - work on GF(2^8) math library: reuse gardinet lib, understand how to use it, see if something is missing.
 * T1.03: - DONE - work on encoder_create()
-* T1.04: (OA) work on encoder_release()
+* T1.04:  work on encoder_release()
 * T1.05: - DONE - work on encoder_set_callback_functions()
 * T1.06: work on swif_encoder_set/get_parameters()
 * T1.07: - DONE - work on swif_build_repair_symbol(): requires to generate the coding coefficients (see RLC I-D) and to computate of the linear combination.
@@ -61,29 +62,35 @@ N/A
 * T3.4: add as many unitary tests as possible for the server/client transmission.
 
 ### C-language server/client application:
-* T4.1 - DONE - work on server (i.e., the encoding/sending side): requires to design a trivial packet format (transmission of the FEC OTI can be static on the opposite), set up the UDP connection, design a simple rate control scheme (to avoid saturating the receiver), and use the generic API to create repair symbols. This work should enable to provide feedback on the Generic API I-D.
-* T4.2: (VR) work on client (i.e., the decoding/receiving side): set up the UDP connection, use the generic API to manage source/repair symbols, to recover from erased source symbols. Test the whole transmission/reception chain. This work should enable to provide feedback on the Generic API I-D.
+* T4.1 - DONE - work on server (i.e., the encoding/sending side): requires to design a trivial packet format (transmission of the FEC OTI can be static on the opposite), set up the UDP connection, design a simple rate control scheme (to avoid saturating the receiver), and use the generic API to create repair symbols.
+* T4.2: (VR) work on client (i.e., the decoding/receiving side): set up the UDP connection, use the generic API to manage source/repair symbols, to recover from erased source symbols. Test the whole transmission/reception chain.
+
+This work should enable to provide feedback to the Generic API I-D.
 
 ### Python wrapper:
-* T5.X: - ON PROGRESS - (MJM, CA)
+* T5.1: - ON PROGRESS - (MJM, CA)
 
 ### Python test and simulation applications:
-* T6.X: (MJM, CA)
+* T6.1: (MJM, CA)
 
+
+## I-D/API updates and open problems
 
 ### I-D/API fixes done:
 
-None yet.
+* build_repair() cannot be used when the buffer is allocated locally. Fixed the error in the API by using a double pointer.
+
 
 ### Active I-D/API fixes that remain to be done:
 
-* TODO: the esi_t is probably inappropriate. In certain situations, it may be a 64-bit long identifer, in other situations it may be an offet (e.g., see RLC for QUIC).
+* TODO: the esi_t is probably inappropriate. In certain situations, it may be a 64-bit long identifer. Could it be a variable length integer (a la QUIC)?
 * TODO: do we really need the encoder_reset_coding_window()? This is clearly useful at the decoder (specify a brand new coding window), but we expect most encoders to manage their encoding window continuously, without needing to reset it altogether. A decision needs to be taken: keep it or remove it.
-* TODO: build_repair() cannot be used when the buffer is allocated locally. Error in the API.
 * TODO: during the end of session, at an encoder, should we call the callback each time we free a symbol or not? We need to clarify this.
 * Added INVALID_ESI to the API. Needed during session startup (first symbol submission). Use another approach to avoid reserving an ESI value to the INVALID state?
 * TODO: swif_encoder_get_coding_window_information() is not appropriate when there's non contiguous symbols (e.g., with re-coding use-cases). We need to decide what to do.
 
+
+------
 
 ## Decisions taken, API and I-D fixes @ IETF104 hackathon
 
@@ -92,7 +99,6 @@ None yet.
 ### Licencing considerations:
 * decision to use a BSD licence. Yes
 * authors of existing code reused by the SWIF codec (Cedric/Vincent/...) agreed to switch to a BSD licence
-* TODO
 
 ### SWIF Codec project targets:
 * Focus on an RLC codec first (as per [RLC I-D](https://datatracker.ietf.org/doc/draft-ietf-tsvwg-rlc-fec-scheme/)), the RLNC codec will be addressed as a second step (it will share a lot of code anyway).
