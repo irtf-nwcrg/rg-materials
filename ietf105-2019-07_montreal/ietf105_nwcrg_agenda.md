@@ -1,4 +1,4 @@
-# IETF 105 NWCRG Meeting Agenda (v1)
+# IETF 105 NWCRG Meeting Agenda (v2)
 
 * [Datatracker](https://datatracker.ietf.org/rg/nwcrg/) 
 * [Github](https://github.com/irtf-nwcrg/rg-materials/)
@@ -14,7 +14,7 @@ Saturday and Sunday, July 20-21, 2018, starting at 9:00
 
 ## 2- nwcrg meeting@ietf105
 
-Friday, July 26, 2019, Morning session I, 10:00-12:00, Van Horne
+Friday, July 26, 2019, Morning session I, 10:00-12:00, Sainte-Catherine (changed!)
 
 #### 00- Welcome, administrative and general matters
 (Chairs) (10')    
