@@ -37,8 +37,13 @@ Relationships with draft-roca-nwcrg-generic-fec-api.
 #### 04- "Coding for QUIC Reference Implementation"
 (François Michel - remote) (5+5)    
 
+#### 05- "Another FEC for QUIC Implementation"
+(Mihail Zverev, Ikerlan - remote) (5+5)    
+
+#### 06- "Links with other Groups and Initiatives (COINRG, ICNRG, LOOPS)"
+(Marie-Jose Montpetit) (10+5)    
 
 --    
-Total allocated time: 65'    
+Total allocated time: 90'    
 
-Time balance: 55'    
+Time balance: 30'    
