@@ -43,12 +43,12 @@ Saturday and Sunday, July 20-21, 2019, starting at 9:00
 ### SWIF Codec, decoder:
 * T2.01: work on new source or repair symbol reception
 * T2.02: linear system decoding using the GF(2^8) math library: includes linear system representation (C structure), progressive decoding upon receiving repair symbols involving erased source symbol(s)
-* T2.03: work on decoder_create()
+* T2.03: - DONE - work on decoder_create()
 * T2.04: work on decoder_release()
 * T2.05: work on set_callback_functions()
 * T2.06: work on decoder_set/get_parameters
-* T2.07: work on decoder_decode_with_new_source_symbol(): relies on work done on task "linear system decoding"
-* T2.08: work on decoder_decode_with_new_repair_symbol(): relies on work done on task "linear system decoding"
+* T2.07: - ON PROGRESS - work on decoder_decode_with_new_source_symbol(): relies on work done on task "linear system decoding"
+* T2.08: - ON PROGRESS - work on decoder_decode_with_new_repair_symbol(): relies on work done on task "linear system decoding"
 * T2.09: work on decoder_reset_coding_window()
 * T2.10: work on decoder_add_source_symbol_to_coding_window()
 * T2.11: work on decoder_remove_source_symbol_from_coding_window()
@@ -63,15 +63,15 @@ Saturday and Sunday, July 20-21, 2019, starting at 9:00
 
 ### C-language server/client application:
 * T4.1 - DONE - work on server (i.e., the encoding/sending side): requires to design a trivial packet format (transmission of the FEC OTI can be static on the opposite), set up the UDP connection, design a simple rate control scheme (to avoid saturating the receiver), and use the generic API to create repair symbols.
-* T4.2: (VR) work on client (i.e., the decoding/receiving side): set up the UDP connection, use the generic API to manage source/repair symbols, to recover from erased source symbols. Test the whole transmission/reception chain.
+* T4.2: - ALMOST DONE - work on client (i.e., the decoding/receiving side): set up the UDP connection, use the generic API to manage source/repair symbols, to recover from erased source symbols. Test the whole transmission/reception chain.
 
 This work should enable to provide feedback to the Generic API I-D.
 
 ### Python wrapper:
-* T5.1: - ON PROGRESS - (MJM, CA)
+* T5.1: - ON PROGRESS - (CA)
 
 ### Python test and simulation applications:
-* T6.1: (MJM, CA)
+* T6.1: (CA)
 
 
 ## I-D/API updates and open problems

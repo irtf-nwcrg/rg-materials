@@ -58,14 +58,16 @@ Tasks (including completion status)
     includes linear system representation (C structure), progressive
     decoding upon receiving repair symbols involving erased source
     symbol(s)
--   T2.03: work on decoder\_create()
+-   T2.03: - DONE - work on decoder\_create()
 -   T2.04: work on decoder\_release()
 -   T2.05: work on set\_callback\_functions()
 -   T2.06: work on decoder\_set/get\_parameters
--   T2.07: work on decoder\_decode\_with\_new\_source\_symbol(): relies
-    on work done on task "linear system decoding"
--   T2.08: work on decoder\_decode\_with\_new\_repair\_symbol(): relies
-    on work done on task "linear system decoding"
+-   T2.07: - ON PROGRESS - work on
+    decoder\_decode\_with\_new\_source\_symbol(): relies on work done on
+    task "linear system decoding"
+-   T2.08: - ON PROGRESS - work on
+    decoder\_decode\_with\_new\_repair\_symbol(): relies on work done on
+    task "linear system decoding"
 -   T2.09: work on decoder\_reset\_coding\_window()
 -   T2.10: work on decoder\_add\_source\_symbol\_to\_coding\_window()
 -   T2.11: work on
@@ -89,20 +91,20 @@ Tasks (including completion status)
     OTI can be static on the opposite), set up the UDP connection,
     design a simple rate control scheme (to avoid saturating the
     receiver), and use the generic API to create repair symbols.
--   T4.2: (VR) work on client (i.e., the decoding/receiving side): set
-    up the UDP connection, use the generic API to manage source/repair
-    symbols, to recover from erased source symbols. Test the whole
-    transmission/reception chain.
+-   T4.2: - ALMOST DONE - work on client (i.e., the decoding/receiving
+    side): set up the UDP connection, use the generic API to manage
+    source/repair symbols, to recover from erased source symbols. Test
+    the whole transmission/reception chain.
 
 This work should enable to provide feedback to the Generic API I-D.
 
 ### Python wrapper:
 
--   T5.1: - ON PROGRESS - (MJM, CA)
+-   T5.1: - ON PROGRESS - (CA)
 
 ### Python test and simulation applications:
 
--   T6.1: (MJM, CA)
+-   T6.1: (CA)
 
 I-D/API updates and open problems
 ---------------------------------
