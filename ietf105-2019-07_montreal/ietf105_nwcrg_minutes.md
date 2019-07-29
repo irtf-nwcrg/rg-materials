@@ -11,14 +11,15 @@ Saturday and Sunday, July 20-21, 2018, starting at 9:00
 
 ## 2- nwcrg meeting@ietf105
 
-Friday, July 26, 2019, Morning session I, 10:00-12:00
+Friday, July 26, 2019, Morning session I, 10:00-12:00    
+Minute taker: Nicolas Kuhn. (thanks a lot to you, Nicolas)
 
 
 #### 00- Welcome, administrative and general matters
 (Chairs)    
 NB: FECFRAME-ext/RLC/TinyMT32 standardisation @ TSVWG: three documents entered RFC Editor Queue.
 
-C (Dave Oran, ICNRG chair hat): The base protocol stacks for CCN are published for RFC. 
+Comment (Dave Oran, ICNRG chair hat): The base protocol stacks for CCN are published for RFC. 
 We have a stable base to do the binding with network coding. 
 We should change the RFC version in the documents. 
 
@@ -55,7 +56,7 @@ A: both - and the document is clear about it - no layer 2 coding.
 Q (Stew Card): what are the “C” is the architecture picture?   
 A: this is where we could put the coding.
  
-C (Vincent): Since you sent your email to the list after updating the I-D, no comment on the two open issues has been received on the list. Please make it clear that you want to close the issues and send it on the list. 
+Comment (Vincent): Since you sent your email to the list after updating the I-D, no comment on the two open issues has been received on the list. Please make it clear that you want to close the issues and send it on the list. 
 Then address the comments recently received from Stuart Card and we'll start a new RGLC.
 
 
