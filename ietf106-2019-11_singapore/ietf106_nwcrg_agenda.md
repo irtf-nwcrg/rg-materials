@@ -34,9 +34,9 @@ Situation of the RLNC I-Ds: what's next?
 
 #### 03- Update of the deployment of BATS code
 (Raymond W. Yeung) (10+5')     
-(https://datatracker.ietf.org/doc/draft-yang-nwcrg-bats/)(expired)     
+(https://datatracker.ietf.org/doc/draft-yang-nwcrg-bats/)     
 
-#### 03- Update of the "RLC FEC Scheme for QUIC" I-D
+#### 04- Update of the "RLC FEC Scheme for QUIC" I-D
 (Vincent Roca) (5+5')    
 (draft-roca-nwcrg-rlc-fec-scheme-for-quic)     
 
@@ -53,8 +53,9 @@ Situation of the RLNC I-Ds: what's next?
 
 ### Relationship with other groups:
 
-#### XX- About LOOPS (Local Optimizations on Path Segments)
+#### 07- About LOOPS (Local Optimizations on Path Segments)
 (Michael Welzl) (10+5')    
+(https://datatracker.ietf.org/doc/draft-welzl-loops-gen-info)     
 
 --    
 
