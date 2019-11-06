@@ -1,4 +1,4 @@
-# IETF 106 NWCRG Meeting Agenda (v0)
+# IETF 106 NWCRG Meeting Agenda (v1)
 
 * [Datatracker](https://datatracker.ietf.org/rg/nwcrg/) 
 * [Github](https://github.com/irtf-nwcrg/rg-materials/)
@@ -19,7 +19,8 @@ Thursday, Nov. 21, 2019, Afternoon session I, 13:30-15:30, Hullet
 #### 00- Welcome, administrative and general matters
 (Chairs) (10+5')    
 News from the FECFRAME-ext/RLC/TinyMT32 standardisation (TSVWG)    
-Situation of the "NC for CCN/NDN: requirements and challenges" I-D
+Situation of the "NC for CCN/NDN: requirements and challenges" I-D     
+Situation of the RLNC I-Ds: what's next?
 
 #### 01- Sliding Window FEC (SWiF) codec hackathon feedback
 (Vincent Roca) (5+5')    
@@ -31,29 +32,32 @@ Situation of the "NC for CCN/NDN: requirements and challenges" I-D
 (Nicolas Kuhn) (5+5')    
 (draft-irtf-nwcrg-network-coding-satellites)    
 
-#### 03- Update of the "RLC FEC Scheme for QUIC" I-D
-(Vincent Roca) (5+5)    
-(draft-roca-nwcrg-rlc-fec-scheme-for-quic)
+#### 03- Update of the deployment of BATS code
+(Raymond W. Yeung) (10+5')     
+(https://datatracker.ietf.org/doc/draft-yang-nwcrg-bats/)(expired)     
 
-#### 04- About RLNC I-Ds: what's next?
-(Chairs) (5) 
+#### 03- Update of the "RLC FEC Scheme for QUIC" I-D
+(Vincent Roca) (5+5')    
+(draft-roca-nwcrg-rlc-fec-scheme-for-quic)     
+
 
 ### New works:    
 
 #### 05- "Coding and congestion control in transport" I-D
-(Nicolas Kuhn) (10+5')
+(Nicolas Kuhn) (10+5')     
+(https://datatracker.ietf.org/doc/html/draft-kuhn-coding-congestion-transport)     
 
 #### 06- Getting and Exchanging Decoding State Information
-(Cedric Adjih) (10+5')
+(Cedric Adjih) (10+5')     
 
 
 ### Relationship with other groups:
 
-#### XX- TBD
-
+#### XX- About LOOPS (Local Optimizations on Path Segments)
+(Michael Welzl) (10+5')    
 
 --    
 
-Total allocated time: 95'    
+Total allocated time: 105'    
 
 Time balance: 15'    
