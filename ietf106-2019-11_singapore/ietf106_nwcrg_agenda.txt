@@ -1,0 +1,65 @@
+IETF 106 NWCRG Meeting Agenda (v0)
+==================================
+
+-   [Datatracker](https://datatracker.ietf.org/rg/nwcrg/)
+-   [Github](https://github.com/irtf-nwcrg/rg-materials/)
+
+1- nwcrg@ietf106-hackathon
+--------------------------
+
+Saturday and Sunday, Nov. 16-17, 2019
+
+-   [Hackathon
+    wiki](https://trac.ietf.org/trac/ietf/meeting/wiki/106hackathon)\
+-   [Github swif-codec repo](https://github.com/irtf-nwcrg/swif-codec)
+
+2- nwcrg meeting@ietf106
+------------------------
+
+Thursday, Nov. 21, 2019, Afternoon session I, 13:30-15:30, Hullet
+
+#### 00- Welcome, administrative and general matters
+
+(Chairs) (10+5')\
+News from the FECFRAME-ext/RLC/TinyMT32 standardisation (TSVWG)\
+Situation of the "NC for CCN/NDN: requirements and challenges" I-D
+
+#### 01- Sliding Window FEC (SWiF) codec hackathon feedback
+
+(Vincent Roca) (5+5')
+
+### Updates of existing works:
+
+#### 02- Update of the "Coding techniques for satellite systems" I-D
+
+(Nicolas Kuhn) (5+5')\
+(draft-irtf-nwcrg-network-coding-satellites)
+
+#### 03- Update of the "RLC FEC Scheme for QUIC" I-D
+
+(Vincent Roca) (5+5)\
+(draft-roca-nwcrg-rlc-fec-scheme-for-quic)
+
+#### 04- About RLNC I-Ds: what's next?
+
+(Chairs) (5)
+
+### New works:
+
+#### 05- "Coding and congestion control in transport" I-D
+
+(Nicolas Kuhn) (10+5')
+
+#### 06- Getting and Exchanging Decoding State Information
+
+(Cedric Adjih) (10+5')
+
+### Relationship with other groups:
+
+#### XX- TBD
+
+--
+
+Total allocated time: 95'
+
+Time balance: 15'
