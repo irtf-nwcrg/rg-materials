@@ -60,12 +60,12 @@ Situation of the RLNC I-Ds: what's next?
 
 ### Open discussions
 
-##### Network coding and critical events in IoT and industrial processes
-(Marie-Jose Montpetit)
+##### 08- Network coding and critical events in IoT and industrial processes
+(Marie-Jose Montpetit) (5')
 
 
 --    
 
-Total allocated time: 105'    
+Total allocated time: 110'    
 
-Time balance: 15'    
+Time balance: 10'    
