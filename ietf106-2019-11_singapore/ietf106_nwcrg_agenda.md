@@ -1,4 +1,4 @@
-# IETF 106 NWCRG Meeting Agenda (v2)
+# IETF 106 NWCRG Meeting Agenda (v3)
 
 * [Datatracker](https://datatracker.ietf.org/rg/nwcrg/) 
 * [Github](https://github.com/irtf-nwcrg/rg-materials/)
@@ -56,6 +56,13 @@ Situation of the RLNC I-Ds: what's next?
 #### 07- About LOOPS (Local Optimizations on Path Segments)
 (Carsten Bormann) (10+5')    
 (https://datatracker.ietf.org/doc/draft-welzl-loops-gen-info)     
+
+
+### Open discussions
+
+##### Network coding and critical events in IoT and industrial processes
+(Marie-Jose Montpetit)
+
 
 --    
 
