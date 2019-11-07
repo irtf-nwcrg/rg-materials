@@ -60,7 +60,7 @@ Situation of the RLNC I-Ds: what's next?
 
 ### Open discussions
 
-##### 08- Network coding and critical events in IoT and industrial processes
+#### 08- Network coding and critical events in IoT and industrial processes
 (Marie-Jose Montpetit) (5')
 
 
