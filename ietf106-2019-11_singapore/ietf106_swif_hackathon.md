@@ -10,9 +10,7 @@ Saturday and Sunday, November 16-17, 2019, starting at 9:00
 
 ## General topics to be discussed and agreed on
 
-### Licencing considerations:
-* Change for a Simplified BSD licence, in accordance with BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents.
-
+N/A
 
 ## Hackathon participants
 
@@ -23,36 +21,12 @@ Saturday and Sunday, November 16-17, 2019, starting at 9:00
 
 ## Tasks (including completion status)
 
+* Essentially integration of linear system decoding library (from Cedric A.).
+* Continue simple_client.c testing application.
+
 ### SWIF Codec, encoder:
-* T1.01: - DONE - glue between the generic API and RLC codec
-* T1.02: - DONE - work on GF(2^8) math library: reuse gardinet lib, understand how to use it, see if something is missing.
-* T1.03: - DONE - work on encoder_create()
-* T1.04:  work on encoder_release()
-* T1.05: - DONE - work on encoder_set_callback_functions()
-* T1.06: work on swif_encoder_set/get_parameters()
-* T1.07: - DONE - work on swif_build_repair_symbol(): requires to generate the coding coefficients (see RLC I-D) and to computate of the linear combination.
-* T1.08: work on encoder_reset_coding_window()
-* T1.09: - DONE - work on encoder_add_source_symbol_to_coding_window()
-* T1.10: work on encoder_remove_source_symbol_from_coding_window()
-* T1.11: - DONE - work on encoder_get_coding_window_information()
-* T1.12: work on encoder_set_coding_coefs_tab()
-* T1.13: work on swif_encoder_generate_coding_coefs()
-* T1.14: work on encoder_get_coding_coefs_tab()
 
 ### SWIF Codec, decoder:
-* T2.01: work on new source or repair symbol reception
-* T2.02: linear system decoding using the GF(2^8) math library: includes linear system representation (C structure), progressive decoding upon receiving repair symbols involving erased source symbol(s)
-* T2.03: - DONE - work on decoder_create()
-* T2.04: work on decoder_release()
-* T2.05: work on set_callback_functions()
-* T2.06: work on decoder_set/get_parameters
-* T2.07: - ON PROGRESS - work on decoder_decode_with_new_source_symbol(): relies on work done on task "linear system decoding"
-* T2.08: - ON PROGRESS - work on decoder_decode_with_new_repair_symbol(): relies on work done on task "linear system decoding"
-* T2.09: work on decoder_reset_coding_window()
-* T2.10: work on decoder_add_source_symbol_to_coding_window()
-* T2.11: work on decoder_remove_source_symbol_from_coding_window()
-* T2.12: work on decoder_set_coding_coefs_tab()
-* T2.13: work on decoder_generate_coding_coefs()
 
 ### SWIF Codec unitary test:
 * T3.1: - DONE - find a way to add unitary tests.
@@ -77,8 +51,7 @@ This work should enable to provide feedback to the Generic API I-D.
 
 ### I-D/API fixes done:
 
-* build_repair() cannot be used when the buffer is allocated locally. Fixed the error in the API by using a double pointer.
-
+* error in decoded_source_symbol_callback) (): does not return anything, so change for void return type.
 
 ### Active I-D/API fixes that remain to be done:
 
@@ -88,6 +61,15 @@ This work should enable to provide feedback to the Generic API I-D.
 * Added INVALID_ESI to the API. Needed during session startup (first symbol submission). Use another approach to avoid reserving an ESI value to the INVALID state?
 * TODO: swif_encoder_get_coding_window_information() is not appropriate when there's non contiguous symbols (e.g., with re-coding use-cases). We need to decide what to do.
 
+------
+
+## Decisions taken, API and I-D fixes @ IETF105 hackathon
+
+### Decisions
+
+### I-D/API fixes done:
+
+* build_repair() cannot be used when the buffer is allocated locally. Fixed the error in the API by using a double pointer.
 
 ------
 
