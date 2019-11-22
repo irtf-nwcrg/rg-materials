@@ -112,27 +112,27 @@ VR: No, everything happens before encryption.
 [https://datatracker.ietf.org/doc/html/draft-kuhn-coding-congestion-transport]    
 
 
-Michael Welzl (MW): About the statement that the receiver MUST inform the sender about recovered packets. The point is that the sender doesn't learn about losses. That's okay to do. Do you always want to always convey situation where you were able to recover. It's an unreliable data transfert so you don't really need to inform the sender about recovered packet from the reliability point of view.    
-NK: The smart things are at the sender because he knows what to do, he knows if it's unreliable.    
+Michael Welzl (MW): About the statement that the receiver MUST inform the sender about recovered packets. Do you always want to inform you were able to recover a packet? It's an unreliable data transfert so you don't really need to inform the sender about recovered packets.    
+NK: The smart things are at the sender because the sender knows more, in particular if it's unreliable.    
 MW: I understand but I think it may be too much. If it's unreliable I don't care about retransmiting.     
-NK: Okay, but it's all about a signal used to convey the information to the sender. You could also use a SACK to inform what has been lost.  If you are using a new type of frame in QUIC you can do that.    
-For the moment it's just basic statement on who knows what, and who indicates what to who.    
-CB: Recovered may not necessary mean the packet has been lost, a packet may just be delayed.    
+NK: Okay, but it's all about a signal used to convey the information to the sender and let the sender adapt. You could also use a SACK to inform about what has been lost. With a new type of frame in QUIC, you could do that.    
+For the moment it's just a basic statement on who knows what, and who indicates what to whom.    
+CB: "Recovered" may not necessary mean the packet has been lost, it may just be delayed.    
 NK: If we want to go further in this document, this is the kind of things we need to put warnings on.    
-Dave: Fine, but you miss the opposite case: what did you send in terms of repair packets that turns out to be useless. It's a matter of measuring the usefulness of repair traffic. It gives an extra degree of freedom on whether you want to play at the congestion control level of at the coding rate level.    
+DO: Fine, but you miss the opposite case: how many repair packets are you sending that turn out to be useless? It's a matter of measuring the usefulness of repair traffic. It gives an extra degree of freedom as you may want to play at the congestion control level or at the coding rate level.    
 NK: Good point, that's the kind of topic we need to gather in the document. There are several corner cases that are very important. This point is about how you add coding inside congestion control. With this claim, we want to be generic.    
 Spencer	Dawkins (SD): Thank you for starting this work, you are at -00 and you have already lots of interests. This is good sign and I know people who need it.
-MW: I don't understand intuition. I think it does not make sense to do something stupid and reasonnable, it's just something half reasonnable.
+MW: I don't understand intuition. I think it does not make sense to do something half reasonnable.
 NK: We need something in-between. We need to discuss this type of situation and find consensus in the group if possible.
-SD: We discussed in many RFC congestion control. I encourage you to include scalable congestion controls and the history in the IETF on the reaction to ECN signals.     
+SD: We discussed in many RFC congestion control. I encourage you to include scalable congestion control and the IETF history on the reaction to ECN signals.     
 EL: Good point. I want to point out there is an antagonism between using erasure coding (temptation to add redundancy if there are losses) and congestion control (it reduces transmission rate in case of losses). How we are going to manage both? That's what we want to discuss.    
 VR: The goal of the document is not to solve all the problems, the goal is to bring some light in this domain.    
 CB: Why do you want to do congestion control? The obvious answer is you want to protect the network. But you may want to have TCP-fairness, so you need to be explicit about what your objectives are.    
 NK: My objective is to have QUIC working on satellite links. We have issues in our network when we have losses. So we need to manage congestion control while integrating FEC in QUIC, end-to-end. If we don't manage to find simple solutions here, FEC won't be deployed in QUIC because many people don't like it.
-CB: There's perhaps a 3rd motivation, getting by the IESG. Do you want to be fair or not.
+CB: There's perhaps a 3rd motivation, getting by the IESG. Do you want to be fair or not?
 NK: The tunnels are out of the scope of the document, so we need TCP Fairness.     
 DO: this is an RG, looking at the coding. It would be really be nice to put in the document that one goal is to guide the researchers to give some guidance on what points need to be confirmed. Because lots of of people could spend lots of time on useless research for wrong ideas.    
-MJM/VR: This subject has long been an important identified topic for our group, thank you very much for the initiative. Does anybody objects in having this a RG Item document? (nobody disagrees). Confirm on list.     
+MJM/VR: This subject has long been a key topic for our group, thank you very much for the initiative. Does anybody objects in having this a RG Item document? (nobody disagrees). Confirm on list.     
 
 
 #### 06- Getting and Exchanging Decoding State Information (Cedric Adjih)
