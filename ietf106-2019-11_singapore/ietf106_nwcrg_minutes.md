@@ -47,7 +47,7 @@ MJM emphasized that the hackthon is really a great opportunity to see what other
 ### Updates of existing works:    
 
 #### 02- Update of the "Coding techniques for satellite systems" I-D (Nicolas Kuhn)
-(draft-irtf-nwcrg-network-coding-satellites)    
+[https://datatracker.ietf.org/doc/draft-irtf-nwcrg-network-coding-satellites]     
 
 All the comments from LLyod and VR have been answered (see details in github I-D repository for Lloyd comments).
 Some satellite vocabulary (satellite "payload" and "FECFRAME" in the satellite context) may create confusion at IETF and these terms have been removed.
@@ -80,15 +80,14 @@ MJM: Having a list of existing FEC solutions is one goal of the group - that is 
 
 
 #### 04- Update of the "RLC FEC Scheme for QUIC" I-D (Vincent Roca)
-(draft-roca-nwcrg-rlc-fec-scheme-for-quic)     
+[https://datatracker.ietf.org/doc/draft-roca-nwcrg-rlc-fec-scheme-for-quic]    
 
 VR presents (without chair hat).    
 
 Carsten Bormann (CB): Do you have an intuition about the choice of E (i.e., the symbol size)?    
 VR: (slide 8) the E value is the symbool size value, it is something important in practice. Having a large E while incoming source packets are all small leads to producing large repair symbols which adds overhead. A smaller E value is preferable, in particular for variable size incoming packets. However a too small E value increases the number of variables in the underlying linear system. hence more processing overhead. There is a balance to find which is use-case dependent and I dont have any definite answer.    
 EL: Are you piggybacking the repair symbols at the end of the packet?    
-VR: Repair symbols are transported in REPAIR frames. They are sent in dedicated packets.    
-QUIC original packet are not modified (except for the addition of a SOURCE-FPI frame.    
+VR: Repair symbols are transported in REPAIR frames. They are sent in dedicated packets. QUIC original packet are not modified (except for the addition of a SOURCE-FPI frame.    
 Emile Stephan (ES): Do you plan to write an extension to QUIC?     
 VR: Our objective is to be in position to convince the QUIC WG that FEC can be useful to QUIC. Doing work in NWCRG enables to make progress on the design and to continue research on benefits it brings to QUIC. We are also waiting for QUIC v1 to be done, then we will decide what is feasible.    
 MJM: the same Louvain team has a modular QUIC implementation that enables dynamic extensions to the protocol (see their SIGCOMM'19 paper). That could be another approach.     
@@ -113,25 +112,33 @@ VR: No, everything happens before encryption.
 [https://datatracker.ietf.org/doc/html/draft-kuhn-coding-congestion-transport]    
 
 
-Michael Welzl (MW): The point is that the sender be informed about the packet losses [...]. What if the sender may not care about the all information? The sender may also not have accurate information and the client may not know exactly what to report (e.g., losing 5/10 packet, recovering 2/10).    
-NK: If you are using a new type of frame in QUIC you can do that. In general, it depends on the protocol carrying the data.     
+Michael Welzl (MW): About the statement that the receiver MUST inform the sender about recovered packets. The point is that the sender doesn't learn about losses. That's okay to do. Do you always want to always convey situation where you were able to recover. It's an unreliable data transfert so you don't really need to inform the sender about recovered packet from the reliability point of view.    
+NK: The smart things are at the sender because he knows what to do, he knows if it's unreliable.    
+MW: I understand but I think it may be too much. If it's unreliable I don't care about retransmiting.     
+NK: Okay, but it's all about a signal used to convey the information to the sender. You could also use a SACK to inform what has been lost.  If you are using a new type of frame in QUIC you can do that.    
+For the moment it's just basic statement on who knows what, and who indicates what to who.    
 CB: Recovered may not necessary mean the packet has been lost, a packet may just be delayed.    
-Dave: Fine, but you miss the opposite case, what do you send if the sender ignores a recover packet? There is another dimension on the impact of the coding rate.    
-Spencer: Thank you for the draft, you are at -00 and you have already lots of interests. You may want to consider scalable congestion controls and the history in the IETF on the reaction to ECN signals.     
-MJM: This document has been in the charter of the RG from the beginning and this is an essential topic, sure.     
-EL: Good point. I want to point out there is a contradiction between erasure coding (it adds redundancy) and congestion control (it can reduce transmission rate). How we are going to manage both?    
-VR: The goal of the document is not to solve all the problems, the goal is the bring some lights in this domain.    
-CB: Why do you want to do congestion control? The previous answer is you want to protect the network. But you may want to have TCP-fairness also, so maybe you should be clear about waht your objective here.    
-NK: My objective is to manage congestion control while integrating FEC in QUIC, end-to-end. The tunnels are out of the scope of the document, so we need TCP Fairness.     
-CB: I may add an objective here, that is getting a review from the IESG.    
-DO: this is an RG, looking at the coding. It would be really be nice to put in the document that one goal is to guide the researchers to give some guidance on what points need to be confirmed. Because lots of of people could spend lots of time on the wrong ideas.    
-MJM: Does anybody objects in having this a RG Item document? (nobody disagrees). Confirm on list.    
+NK: If we want to go further in this document, this is the kind of things we need to put warnings on.    
+Dave: Fine, but you miss the opposite case: what did you send in terms of repair packets that turns out to be useless. It's a matter of measuring the usefulness of repair traffic. It gives an extra degree of freedom on whether you want to play at the congestion control level of at the coding rate level.    
+NK: Good point, that's the kind of topic we need to gather in the document. There are several corner cases that are very important. This point is about how you add coding inside congestion control. With this claim, we want to be generic.    
+Spencer	Dawkins (SD): Thank you for starting this work, you are at -00 and you have already lots of interests. This is good sign and I know people who need it.
+MW: I don't understand intuition. I think it does not make sense to do something stupid and reasonnable, it's just something half reasonnable.
+NK: We need something in-between. We need to discuss this type of situation and find consensus in the group if possible.
+SD: We discussed in many RFC congestion control. I encourage you to include scalable congestion controls and the history in the IETF on the reaction to ECN signals.     
+EL: Good point. I want to point out there is an antagonism between using erasure coding (temptation to add redundancy if there are losses) and congestion control (it reduces transmission rate in case of losses). How we are going to manage both? That's what we want to discuss.    
+VR: The goal of the document is not to solve all the problems, the goal is to bring some light in this domain.    
+CB: Why do you want to do congestion control? The obvious answer is you want to protect the network. But you may want to have TCP-fairness, so you need to be explicit about what your objectives are.    
+NK: My objective is to have QUIC working on satellite links. We have issues in our network when we have losses. So we need to manage congestion control while integrating FEC in QUIC, end-to-end. If we don't manage to find simple solutions here, FEC won't be deployed in QUIC because many people don't like it.
+CB: There's perhaps a 3rd motivation, getting by the IESG. Do you want to be fair or not.
+NK: The tunnels are out of the scope of the document, so we need TCP Fairness.     
+DO: this is an RG, looking at the coding. It would be really be nice to put in the document that one goal is to guide the researchers to give some guidance on what points need to be confirmed. Because lots of of people could spend lots of time on useless research for wrong ideas.    
+MJM/VR: This subject has long been an important identified topic for our group, thank you very much for the initiative. Does anybody objects in having this a RG Item document? (nobody disagrees). Confirm on list.     
 
 
 #### 06- Getting and Exchanging Decoding State Information (Cedric Adjih)
 
 
-VR: Thanks. This is in parts an implementation specific matter. We have flexible set/get_parameter() setters and getters that uses a type-length-value approach. It could be used to have this implementation specific extension without adding extra complexity to the core API. Let's discuss this offline.
+VR: Thanks. This is in parts an implementation specific matter. We have a flexible parameter setter and getter that uses a type-length-value approach. It could be used to have this implementation specific extension without adding extra complexity to the core API. Let's discuss this offline.
 
 
 ### Relationship with other groups:
@@ -140,9 +147,7 @@ VR: Thanks. This is in parts an implementation specific matter. We have flexible
 [https://datatracker.ietf.org/doc/draft-welzl-loops-gen-info]     
 
 
-CB: Who has been in the LOOPS side meeting?    
-Half of the people in the room (approx 10/20) attended the meeting.     
-
+CB: Who has been in the LOOPS side meeting? Half of the people in the room (approx 10/20) did.
 DO: Is reordering one of the things you are not doing?    
 CB: We may do reordering.    
 DO: Is it a requirement to take incoming disorder packets and reorder them in the tunnel?    
