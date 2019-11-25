@@ -1,4 +1,4 @@
-# IETF 106 NWCRG Meeting Agenda (v3)
+# IETF 106 NWCRG Meeting Minutes (v1)
 
 * [Datatracker](https://datatracker.ietf.org/rg/nwcrg/) 
 * [Github](https://github.com/irtf-nwcrg/rg-materials/)
