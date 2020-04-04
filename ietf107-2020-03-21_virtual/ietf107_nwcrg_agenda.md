@@ -10,29 +10,46 @@ Cancelled.
 
 ## 2- nwcrg virtual meeting@ietf107 
 
-Date TBC
+Virtual interim meeting on Monday April 6th, 2020, 12h00-13h00 UTC    
+(meaning for instance: Paris: 2pm, Boston: 8am, Vancouver: 5am, Tokyo: 9pm, Beijing: 8pm)
+
+------------------
+
+	Webex information:     
+	Monday, Apr 6, 2020 8:00 am | 1 hour | (UTC-04:00) Eastern Time (US & Canada)    
+	Meeting number: 618 355 565    
+	Password: QVb9j6abPj6    
+	https://ietf.webex.com/ietf/j.php?MTID=m0424f5297e7ee4917e8fb645fbe77335
+
+	Join by video system    
+	Dial 618355565@ietf.webex.com    
+	You can also dial 173.243.2.68 and enter your meeting number.
+	
+	Join by phone    
+	1-650-479-3208 Call-in toll number (US/Canada)    
+	1-877-668-4493 Call-in toll free number (US/Canada)    
+	Access code: 618 355 565
+
+------------------
 
 #### 00- Welcome, administrative and general matters
-(Chairs) (10+5')    
+(Chairs) (10'+5')
 
+### 01- Quick info on IPR disclosure against RFC 8681 (RLC FEC Scheme) and reminder of the IETF/IRTF policy on IPR disclosures
+(https://datatracker.ietf.org/ipr/search/?submit=draft&id=draft-ietf-tsvwg-rlc-fec-scheme)
+(Vincent Roca, as co-author, and Marie-Jose Montpetit, as co-inventor) (10')
 
 ### Updates of existing works:    
 
-#### 01- "Coding and congestion control in transport" I-D
-(Nicolas Kuhn) (10+5')     
+#### 02- "Coding and congestion control in transport" I-D
+(Nicolas Kuhn) (10+10')     
 (https://datatracker.ietf.org/doc/draft-irtf-nwcrg-coding-and-congestion/)
-
-### New works:    
-
-
-### Relationship with other groups:
-
 
 ### Open discussions
 
+TBD
 
 --    
 
-Total allocated time: 30'
+Total allocated time: 45'
 
-Time balance: XXX    
