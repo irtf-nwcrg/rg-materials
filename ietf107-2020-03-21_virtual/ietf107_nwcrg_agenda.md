@@ -8,7 +8,7 @@
 
 Cancelled.
 
-## 2- nwcrg virtual meeting@ietf107 
+## 2- nwcrg interim meeting (replacement for ietf107 meeting)
 
 Virtual interim meeting on Monday April 6th, 2020, 12h00-13h00 UTC    
 (meaning for instance: Paris: 2pm, Boston: 8am, Vancouver: 5am, Tokyo: 9pm, Beijing: 8pm)
