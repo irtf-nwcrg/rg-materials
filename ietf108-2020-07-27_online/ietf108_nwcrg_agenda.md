@@ -9,13 +9,16 @@
 Monday, July 20 through Friday July 24, 2020. Online only.
 Contact vincent.roca@inria.fr if interested.
 
-## 2- nwcrg interim meeting (replacement for ietf107 meeting)
+## 2- nwcrg online meeting
 
 Online meeting on Monday Session II 13:00-13:50 (UTC).
+[Time Zone Conversion:](https://www.timeanddate.com/worldclock/fixedtime.html?iso=20200727T13&p1=1440&am=50)
 
 ------------------
 
-	Connectivity information to be provided
+Participation will take place through Meetecho (please connect in advance):
+- HOWTO [Meetecho participant guide](https://www.ietf.org/how/meetings/108/session-participant-guide/)
+- The Agenda includes [links to Meetecho sessions](https://datatracker.ietf.org/meeting/108/agenda)
 
 ------------------
 
