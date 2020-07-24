@@ -1,4 +1,4 @@
-IETF 108 NWCRG Meeting Agenda (v1)
+IETF 108 NWCRG Meeting Agenda (v2)
 ==================================
 
 -   [Datatracker](https://datatracker.ietf.org/rg/nwcrg/)
