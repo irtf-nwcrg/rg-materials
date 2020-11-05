@@ -1,4 +1,4 @@
-IETF 109 NWCRG Meeting Agenda (v1)
+IETF 109 NWCRG Meeting Agenda (v2)
 ==================================
 
 -   [Datatracker](https://datatracker.ietf.org/rg/nwcrg/)
@@ -20,9 +20,9 @@ Conversion:](https://www.timeanddate.com/worldclock/fixedtime.html?iso=20201117T
 
 Participation will take place through Meetecho (please connect in
 advance):\
-- HOWTO [Meetecho participant
-guide](https://www.ietf.org/how/meetings/109/session-participant-guide/)
-- The Agenda includes [links to Meetecho
+- [Meetecho participant
+guide](https://www.ietf.org/how/meetings/109/session-participant-guide/)\
+- [links to Meetecho
 sessions](https://datatracker.ietf.org/meeting/109/agenda)
 
 ------------------------------------------------------------------------
@@ -41,8 +41,14 @@ sessions](https://datatracker.ietf.org/meeting/109/agenda)
 #### 02- "Coding and congestion control in transport" I-D
 
 (Nicolas Kuhn) (10+5')\
-(https://datatracker.ietf.org/doc/draft-irtf-nwcrg-coding-and-congestion/)
+(https://datatracker.ietf.org/doc/draft-irtf-nwcrg-coding-and-congestion/)\
 Update of the document and new experimental results.
+
+### Additional presentations
+
+#### 03- "Repair patterns for sliding window codes"
+
+(Morten V. Pedersen) (10')
 
 ### Wrap-up, next steps
 
@@ -50,4 +56,4 @@ Update of the document and new experimental results.
 
 --
 
-Total allocated time: 45'
+Total allocated time: 55'
