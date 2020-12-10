@@ -23,7 +23,7 @@ all: txt
 txt:
 	pandoc -s ${MDFILE} -o ${TXTFILE}
 	#pandoc -s ${MDFILE1} -o ${TXTFILE1}
-	#pandoc -s ${MDFILE2} -o ${TXTFILE2}
+	pandoc -s ${MDFILE2} -o ${TXTFILE2}
 
 
 #html:
