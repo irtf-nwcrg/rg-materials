@@ -28,7 +28,7 @@ Participation will take place through Meetecho (please connect in advance):
 
 #### 01- "BATS Coding Scheme for Multi-hop Data Transport" I-D
 (Raymond Yeung) (10+5')     
-(https://datatracker.ietf.org/doc/draft-yang-nwcrg-bats/)
+(https://datatracker.ietf.org/doc/draft-irtf-nwcrg-bats/)
 
 #### 02- "Coding and congestion control in transport" I-D
 (Nicolas Kuhn) (10+5')     
