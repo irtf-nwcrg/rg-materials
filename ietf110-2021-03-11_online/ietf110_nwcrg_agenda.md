@@ -1,4 +1,4 @@
-# IETF 110 NWCRG Meeting Agenda (v1)
+# IETF 110 NWCRG Meeting Agenda (v2)
 
 * [Datatracker](https://datatracker.ietf.org/rg/nwcrg/) 
 * [Github](https://github.com/irtf-nwcrg/rg-materials/)
@@ -35,11 +35,16 @@ Participation will take place through Meetecho (please connect in advance):
 (https://datatracker.ietf.org/doc/draft-irtf-nwcrg-coding-and-congestion/)    
 Update of the document and new experimental results.
 
+### Others
+
+#### 03- "About latency/reliability for block and sliding window codes" 
+(Morten V. Pedersen) (10')
+
 ### Wrap-up, next steps
 (Chairs, all) (5')
 
 
 --    
 
-Total allocated time: 45'
+Total allocated time: 55'
 
