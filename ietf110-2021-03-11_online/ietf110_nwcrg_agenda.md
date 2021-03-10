@@ -6,7 +6,7 @@
 
 ## 1- nwcrg@ietf109-hackathon
 
-We'll held a hackathon for the swif codec.
+CANCELED
 
 ## 2- nwcrg online meeting
 
