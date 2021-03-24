@@ -30,14 +30,14 @@ Participation will take place through Meetecho (please connect in advance):
 (Raymond Yeung) (10+5')     
 (https://datatracker.ietf.org/doc/draft-irtf-nwcrg-bats/)
 
-Watson Ladd (Cloudflare): very interesting work. How to advance the draft to have it published on time?    
+Watson Ladd (Cloudflare): very interesting work. How to advance the draft and have it published on time?    
 RY: we have the feeling it's pretty ready for publication.    
 VR: the newly added section 4 is very well written and clear, and the same it true for the security section.
 I need to read the specifications part but otherwise I'm very happy with the way this document progressed.
-Just a comment for section 4: if you can make it a bit more neutral it would be good.    
+Just a comment for section 4: if you can make it a bit more neutral, it would be fine.    
 RY: yes, no problem.    
 Dave Oran: what happens when a RG closes, is that we put the research group in sleep mode until the last
-document has been through the whole process, and only when we formally close the group.    
+document has been through the whole process and is published, and only then we formally close the group.    
 VR: I'm quite confident we can have a RG Last Call very soon.     
 
 
@@ -54,13 +54,11 @@ NK: open issue #57
 VR: here also it's easy to address, add a reference to the existing RFC8681.
 Parameter derivation is more than just a matter of "amount of redundancy to add", it's more complex than that.
 You can achieve the same reliability for a given loss pattern by using fewer redundant packets, just by changing
-the nature and usage of the FEC scheme, and if you can all of this while accommodating an increase of latency, then you win.     
+the nature and usage of the FEC scheme, and if you can do all of this without increasing latency, then you win.     
 NK: open issue #58: we agree and will update this section.    
-
 Markus Amend (Deutsche Telekom): I'm co-author of three multi-path TCP documents. Do you have a reference implementation?        
-NK: François Michel has an implementation for FEC in QUIC. But it depends on what.    
-MA: It could be a great opportunity to have bring this work to the MPTCP group, you're welcome. Another question
-is about synergies with ICCRG.    
+NK: Depends. François Michel has an implementation of FEC in QUIC.    
+MA: It could be a great opportunity to bring this work to the MPTCP group, you're welcome. Another question is about synergies with ICCRG.    
 NK: let's continue on the mailing list, but yes, there are overlaps and this is why I sent the email.    
 VR: the document is progressing well, and I'm confident we can have something ready soon. Thank you.    
 
@@ -71,13 +69,13 @@ VR: the document is progressing well, and I'm confident we can have something re
 (Morten V. Pedersen) (10')
 
 MJM: We know that for quite a long time. Have you done more research on this?     
-MVP: a first topic we are looking at comes from the fact that sliding window codes do not always behave better than block codes, especially when the repair rate approaches the channel loss rate. Sometimes you can end up in a situation where repairs are almost useless with sliding window codes, whereas with block codes, blocks being independent from one another, you can recover from a bad situation more easily. We are looking at situations where the repair and loss rates are close to one another, and how to manage the sliding window in that case, potentially getting closer to block codes.    
-Another topic is how to address situations where you have links with different latencies. In that case, the packets sent over the slower link cannot include as many packets in their repair window as those sent on the higher speed links.    
-Content aware coding is yet another direction. You can easily get a latency penalty if you don't make your coding window adjusted to the source flow, if this latter is of variable bit rate.    
-A fourth topic: reliability techniques are usually split into either ARQ or FEC. Yet protocols could try to take the best of boths, depending on the experienced latency.    
+MVP: Yes. A first topic we are looking at comes from the fact that sliding window codes do not always behave better than block codes, especially when the repair rate approaches the channel loss rate. Sometimes you can end up in a situation where repairs are almost useless with sliding window codes, whereas with block codes, blocks being independent from one another, you can recover from a bad situation more easily. We are looking at situations where the repair and loss rates are close to one another, and how to manage the sliding window in that case, potentially getting closer to block codes.    
+Another topic is how to address situations where you have links with different latencies. In that case, the packets sent over the slower link cannot include as many packets in their repair window as those sent on the faster links.    
+Content aware coding is yet another topic. You can easily get a latency penalty if you don't make your coding window adjusted to the source flow when this source flow is of variable bit rate.    
+A fourth topic: reliability techniques are usually split into either ARQ or FEC. Yet protocols could try to take the best of both, depending on the experienced latency.    
 Those are some of the directions we're looking at.    
 Watson Ladd: really interesting. How close to the channel capacity are you?    
-MVP: there are tradeoff here. If you use FEC underneath the transport protocol, you can effectively mask all losses, but it comes with an increased bandwidth.
-Yet sliding window gives you the best tradeoff between reliability and overhead, in any case much better than Reed-Solomon most of the time.
-VR: This discussion was very interesting. If you have the opportunity for next meeting, we'd be very interested in having more insights on these aspects.
+MVP: there are tradeoffs here. If you use FEC underneath the transport protocol, you can effectively mask all losses, but it comes with an increased bandwidth.
+Yet sliding window gives you the best tradeoff between reliability and overhead, much better than Reed-Solomon codes most of the time.
+VR: This discussion was very interesting. During next meeting, we'd be very interested in having more insights on these aspects.
 
