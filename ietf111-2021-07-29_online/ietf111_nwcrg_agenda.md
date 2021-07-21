@@ -12,7 +12,7 @@ Online meeting on Thursday July 29, 2021, 22:00-23:00 (UTC) Thursday Session III
 ------------------
 
 Participation will take place through Meetecho (please connect in advance):    
-    - [Meetecho participant guide](https://www.ietf.org/how/meetings/technology/meetecho-guide-participant/)
+    - [Meetecho participant guide](https://www.ietf.org/how/meetings/technology/meetecho-guide-participant/)    
     - [links to Meetecho sessions](https://datatracker.ietf.org/meeting/111/agenda)
 
 ------------------
