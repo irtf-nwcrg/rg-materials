@@ -1,4 +1,4 @@
-# IETF 111 NWCRG Meeting Agenda (v0)
+# IETF 111 NWCRG Meeting Agenda (v1)
 
 * [Datatracker](https://datatracker.ietf.org/rg/nwcrg/) 
 * [Github](https://github.com/irtf-nwcrg/rg-materials/)
@@ -18,21 +18,10 @@ Participation will take place through Meetecho (please connect in advance):
 ------------------
 
 #### 00- Welcome, administrative and general matters    
-(Chairs) (10')
+(Chairs) (5')
 
-### Status of our research group    
+### 01- NWCRG, status after 8 1/2 years (2013 - 2021)
 (Chairs, all)
 
-- Unfinished RG Item documents:    
-    - (https://datatracker.ietf.org/doc/draft-irtf-nwcrg-bats/)    
-    - (https://datatracker.ietf.org/doc/draft-irtf-nwcrg-coding-and-congestion/)        
-
-- Other documents...    
-
-- How to progress from now on?    
-
-
-### Others
-
-(TBD)
+This last meeting is the right time to highlight what happened in our RG since its creation, a bit more than 8 years ago.
 
