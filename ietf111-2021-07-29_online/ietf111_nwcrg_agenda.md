@@ -17,7 +17,7 @@ Participation will take place through Meetecho (please connect in advance):
 
 ------------------
 
-#### 00- Welcome, administrative and general matters    
+### 00- Welcome, administrative and general matters    
 (Chairs) (5')
 
 ### 01- NWCRG, status after 8 1/2 years (2013 - 2021)
