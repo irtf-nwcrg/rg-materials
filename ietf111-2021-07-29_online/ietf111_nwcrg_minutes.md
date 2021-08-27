@@ -38,7 +38,7 @@ NB: transcription of the [slides presented during IETF111](https://datatracker.i
 - 2021-03: "NC for CCN" I-D sent to IRSG
 - 2021-07: "Coding & CC" I-D sent to IRSG
 - 2021-07: last meeting during IETF 111
-- 2021-09: "BATS" to be sent to IRSG "tentative)
+- 2021-09: "BATS" to be sent to IRSG (tentative)
 
 #### Three additional RFCs 
 
