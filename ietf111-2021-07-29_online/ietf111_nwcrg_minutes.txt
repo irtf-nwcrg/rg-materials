@@ -32,7 +32,7 @@ since its creation, a bit more than 8 years ago.
 
 (Chairs, all)
 
-NB: verbatim of the [slides presented during
+NB: transcription of the [slides presented during
 IETF111](https://datatracker.ietf.org/meeting/111/materials/slides-111-nwcrg-01-nwcrg-status-01)
 
 #### Key events and RFC publications

@@ -25,7 +25,7 @@ This last meeting is the right time to highlight what happened in our RG since i
 ### 01- NWCRG, status after 8 1/2 years (2013 - 2021)
 (Chairs, all)
 
-NB: verbatim of the [slides presented during IETF111](https://datatracker.ietf.org/meeting/111/materials/slides-111-nwcrg-01-nwcrg-status-01)
+NB: transcription of the [slides presented during IETF111](https://datatracker.ietf.org/meeting/111/materials/slides-111-nwcrg-01-nwcrg-status-01)
 
 
 #### Key events and RFC publications
